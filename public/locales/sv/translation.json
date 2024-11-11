@@ -1,0 +1,165 @@
+{
+    "metadata": {
+      "language": "Svenska",
+      "languageCode": "sv",
+      "direction": "ltr"
+    },
+  
+    "navigation": {
+      "home": "Hem",
+      "products": "Produkter",
+      "about": "Om oss",
+      "contact": "Kontakt",
+      "privacy": "Integritetspolicy",
+      "terms": "Användarvillkor"
+    },
+  
+    "products": {
+      "title": "Våra produkter",
+      "subtitle": "Fiskprodukter av högsta kvalitet",
+      "categories": {
+        "rainbowTrout": {
+          "name": "Regnbåge",
+          "description": "Färsk odlad regnbåge, noggrant bearbetad och levererad",
+          "details": "Vår regnbåge odlas i den rena skärgårdens vatten"
+        },
+        "whitefish": {
+          "name": "Sik",
+          "description": "Premiumkvalitet sik från hållbara källor",
+          "details": "Lokalt producerad sik, bearbetad med omsorg"
+        },
+        "char": {
+          "name": "Röding",
+          "description": "Delikat och smakrik röding",
+          "details": "Odlad röding känd för sin rika smak"
+        },
+        "caviar": {
+          "name": "Kaviar",
+          "description": "Premium regnbågsrom",
+          "details": "Noggrant bearbetad röd kaviar tillgänglig från senhöst till tidig vinter"
+        }
+      },
+      "features": {
+        "sustainable": "Hållbart odlad",
+        "fresh": "Färsk leverans",
+        "quality": "Premiumkvalitet",
+        "local": "Lokalproducerad"
+      },
+      "processing": {
+        "title": "Bearbetningstjänster",
+        "gutting": "Rensning",
+        "cleaning": "Rengöring",
+        "filleting": "Filetering",
+        "packaging": "Vakuumförpackning"
+      }
+    },
+  
+    "about": {
+      "title": "Om M.A.T-Fish",
+      "subtitle": "Kvalitetsfiskprodukter sedan 1970",
+      "company": {
+        "history": "Företagshistoria",
+        "mission": "Vår mission",
+        "vision": "Vår vision",
+        "values": "Våra värderingar"
+      },
+      "historyText": "M.A.T-Fish Ab Oy har varit verksamt i Föglö-regionen sedan 1970-talet och levererar fiskprodukter av högsta kvalitet till våra kunder.",
+      "missionText": "Vår mission är att tillhandahålla fiskprodukter av högsta kvalitet samtidigt som vi upprätthåller hållbara odlingsmetoder.",
+      "visionText": "Att vara den ledande leverantören av premiumfiskprodukter i Finland, känd för kvalitet och hållbarhet.",
+      "values": {
+        "quality": "Kompromisslös kvalitet",
+        "sustainability": "Miljöansvar",
+        "transparency": "Affärstransparens",
+        "customer": "Kundnöjdhet"
+      }
+    },
+  
+    "contact": {
+      "title": "Kontakta oss",
+      "subtitle": "Kontaktuppgifter",
+      "info": {
+        "address": "Adress",
+        "phone": "Telefon",
+        "email": "E-post",
+        "hours": "Öppettider"
+      },
+      "form": {
+        "name": "Namn",
+        "email": "E-postadress",
+        "subject": "Ämne",
+        "message": "Meddelande",
+        "send": "Skicka meddelande",
+        "required": "Obligatoriskt fält",
+        "success": "Meddelandet har skickats",
+        "error": "Fel vid sändning av meddelande"
+      },
+      "location": {
+        "title": "Vår plats",
+        "address": {
+          "street": "Tingsvägen 3",
+          "city": "Föglö",
+          "postal": "22710",
+          "country": "Finland"
+        }
+      },
+      "hours": {
+        "weekdays": "Måndag - Fredag",
+        "weekend": "Lördag - Söndag",
+        "time": "8:00 - 16:00",
+        "closed": "Stängt"
+      }
+    },
+  
+    "common": {
+      "company": {
+        "name": "M.A.T-Fish Ab Oy",
+        "slogan": "Fiskprodukter av premiumkvalitet",
+        "businessId": "FO-nummer",
+        "vatId": "Momsnummer"
+      },
+      "buttons": {
+        "readMore": "Läs mer",
+        "viewAll": "Visa alla",
+        "order": "Beställ nu",
+        "contact": "Kontakta oss",
+        "back": "Tillbaka",
+        "submit": "Skicka",
+        "cancel": "Avbryt"
+      },
+      "loading": "Laddar...",
+      "error": "Fel",
+      "success": "Klart",
+      "required": "Obligatorisk",
+      "optional": "Valfri"
+    },
+  
+    "footer": {
+      "rights": "Alla rättigheter förbehållna",
+      "quickLinks": "Snabblänkar",
+      "contact": "Kontaktinformation",
+      "social": {
+        "title": "Följ oss",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn"
+      }
+    },
+  
+    "seo": {
+      "home": {
+        "title": "M.A.T-Fish - Premium fiskprodukter & bearbetning",
+        "description": "Ledande leverantör av premiumfiskprodukter i Finland. Färsk regnbåge, sik, röding och kaviar från hållbara källor."
+      },
+      "products": {
+        "title": "Våra produkter - Premiumfisk & kaviar | M.A.T-Fish",
+        "description": "Upptäck vårt utbud av premiumfiskprodukter inklusive regnbåge, sik, röding och säsongskaviar. Färsk och hållbart odlad."
+      },
+      "about": {
+        "title": "Om oss - M.A.T-Fish Ab Oy",
+        "description": "Läs om M.A.T-Fishs historia, värderingar och engagemang för hållbar fiskodling och bearbetning i Finlands skärgård."
+      },
+      "contact": {
+        "title": "Kontakta M.A.T-Fish - Nå oss",
+        "description": "Kontakta M.A.T-Fish för premiumfiskprodukter och bearbetningstjänster. Beläget i Föglö, Finland."
+      }
+    }
+  }

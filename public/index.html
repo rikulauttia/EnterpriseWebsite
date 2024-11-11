@@ -1,43 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <meta name="theme-color" content="#1e40af" />
+    
+    <!-- Primary Meta Tags -->
+    <title>M.A.T-Fish Ab Oy | Premium Fish Products & Processing</title>
+    <meta name="title" content="M.A.T-Fish Ab Oy | Premium Fish Products & Processing" />
+    <meta name="description" content="Premium quality farmed rainbow trout, whitefish, and char. Fresh fish delivery across Finland. Specializing in fish processing and premium caviar production." />
+    <meta name="keywords" content="fish processing, farmed rainbow trout, caviar, whitefish, char, fresh fish delivery, M.A.T-Fish, Finland fish farm" />
+    <meta name="author" content="M.A.T-Fish Ab Oy" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://matfish.fi/" />
+    <meta property="og:title" content="M.A.T-Fish Ab Oy | Premium Fish Products & Processing" />
+    <meta property="og:description" content="Premium quality farmed rainbow trout, whitefish, and char. Fresh fish delivery across Finland. Specializing in fish processing and premium caviar production." />
+    <meta property="og:image" content="%PUBLIC_URL%/social-preview.jpg" />
+    <meta property="og:site_name" content="M.A.T-Fish Ab Oy" />
+    <meta property="og:locale" content="fi_FI" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://matfish.fi/" />
+    <meta name="twitter:title" content="M.A.T-Fish Ab Oy | Premium Fish Products & Processing" />
+    <meta name="twitter:description" content="Premium quality farmed rainbow trout, whitefish, and char. Fresh fish delivery across Finland. Specializing in fish processing and premium caviar production." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/social-preview.jpg" />
+    
+    <!-- Alternate Language Versions -->
+    <link rel="alternate" hreflang="fi" href="https://matfish.fi/" />
+    <link rel="alternate" hreflang="en" href="https://matfish.fi/en/" />
+    <link rel="alternate" hreflang="sv" href="https://matfish.fi/sv/" />
+    <link rel="alternate" hreflang="x-default" href="https://matfish.fi/" />
+    
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    
+    <!-- Preconnect to Important Third-party Domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "M.A.T-Fish Ab Oy",
+        "url": "https://matfish.fi",
+        "logo": "https://matfish.fi/logo.png",
+        "description": "Premium quality farmed rainbow trout, whitefish, and char producer in Finland",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FI"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+358-YOUR-PHONE",
+          "contactType": "customer service",
+          "availableLanguage": ["en", "fi", "sv"]
+        },
+        "sameAs": [
+          "YOUR_FACEBOOK_URL",
+          "YOUR_LINKEDIN_URL"
+        ]
+      }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA4-ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR-GA4-ID');
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="padding: 20px; text-align: center;">
+        <h1>JavaScript Required</h1>
+        <p>We're sorry, but M.A.T-Fish requires JavaScript to be enabled. Please enable JavaScript to continue.</p>
+        <p>JavaScript tarvitaan sivuston käyttämiseen. Ole hyvä ja salli JavaScript selaimessasi.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

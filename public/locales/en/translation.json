@@ -1,0 +1,165 @@
+{
+    "metadata": {
+      "language": "English",
+      "languageCode": "en",
+      "direction": "ltr"
+    },
+  
+    "navigation": {
+      "home": "Home",
+      "products": "Products",
+      "about": "About Us",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+  
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Premium Quality Fish Products",
+      "categories": {
+        "rainbowTrout": {
+          "name": "Rainbow Trout",
+          "description": "Fresh farmed rainbow trout, carefully processed and delivered",
+          "details": "Our rainbow trout is farmed in the clean waters of the Finnish archipelago"
+        },
+        "whitefish": {
+          "name": "Whitefish",
+          "description": "Premium quality whitefish from sustainable sources",
+          "details": "Locally sourced whitefish, processed with care"
+        },
+        "char": {
+          "name": "Arctic Char",
+          "description": "Delicate and flavorful arctic char",
+          "details": "Farm-raised arctic char known for its rich taste"
+        },
+        "caviar": {
+          "name": "Caviar",
+          "description": "Premium rainbow trout roe",
+          "details": "Carefully processed red caviar available in late autumn and early winter"
+        }
+      },
+      "features": {
+        "sustainable": "Sustainably Farmed",
+        "fresh": "Fresh Delivery",
+        "quality": "Premium Quality",
+        "local": "Locally Produced"
+      },
+      "processing": {
+        "title": "Processing Services",
+        "gutting": "Fish Gutting",
+        "cleaning": "Fish Cleaning",
+        "filleting": "Filleting",
+        "packaging": "Vacuum Packaging"
+      }
+    },
+  
+    "about": {
+      "title": "About M.A.T-Fish",
+      "subtitle": "Quality Fish Products Since 1970",
+      "company": {
+        "history": "Company History",
+        "mission": "Our Mission",
+        "vision": "Our Vision",
+        "values": "Our Values"
+      },
+      "historyText": "M.A.T-Fish Ab Oy has been operating in the Föglö region since the 1970s, providing premium quality fish products to our customers.",
+      "missionText": "Our mission is to provide the highest quality fish products while maintaining sustainable farming practices.",
+      "visionText": "To be the leading provider of premium fish products in Finland, known for quality and sustainability.",
+      "values": {
+        "quality": "Uncompromising Quality",
+        "sustainability": "Environmental Responsibility",
+        "transparency": "Business Transparency",
+        "customer": "Customer Satisfaction"
+      }
+    },
+  
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in Touch",
+      "info": {
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "hours": "Business Hours"
+      },
+      "form": {
+        "name": "Name",
+        "email": "Email Address",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message",
+        "required": "Required field",
+        "success": "Message sent successfully",
+        "error": "Error sending message"
+      },
+      "location": {
+        "title": "Our Location",
+        "address": {
+          "street": "Tingsvägen 3",
+          "city": "Föglö",
+          "postal": "22710",
+          "country": "Finland"
+        }
+      },
+      "hours": {
+        "weekdays": "Monday - Friday",
+        "weekend": "Saturday - Sunday",
+        "time": "8:00 - 16:00",
+        "closed": "Closed"
+      }
+    },
+  
+    "common": {
+      "company": {
+        "name": "M.A.T-Fish Ab Oy",
+        "slogan": "Premium Quality Fish Products",
+        "businessId": "Business ID",
+        "vatId": "VAT ID"
+      },
+      "buttons": {
+        "readMore": "Read More",
+        "viewAll": "View All",
+        "order": "Order Now",
+        "contact": "Contact Us",
+        "back": "Back",
+        "submit": "Submit",
+        "cancel": "Cancel"
+      },
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success",
+      "required": "Required",
+      "optional": "Optional"
+    },
+  
+    "footer": {
+      "rights": "All rights reserved",
+      "quickLinks": "Quick Links",
+      "contact": "Contact Information",
+      "social": {
+        "title": "Follow Us",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn"
+      }
+    },
+  
+    "seo": {
+      "home": {
+        "title": "M.A.T-Fish - Premium Fish Products & Processing",
+        "description": "Leading provider of premium quality fish products in Finland. Fresh rainbow trout, whitefish, char, and caviar from sustainable sources."
+      },
+      "products": {
+        "title": "Our Products - Premium Fish & Caviar | M.A.T-Fish",
+        "description": "Discover our range of premium fish products including rainbow trout, whitefish, char, and seasonal caviar. Fresh and sustainably farmed."
+      },
+      "about": {
+        "title": "About Us - M.A.T-Fish Ab Oy",
+        "description": "Learn about M.A.T-Fish's history, values, and commitment to sustainable fish farming and processing in Finland's archipelago."
+      },
+      "contact": {
+        "title": "Contact M.A.T-Fish - Get in Touch",
+        "description": "Contact M.A.T-Fish for premium fish products and processing services. Located in Föglö, Finland."
+      }
+    }
+  }

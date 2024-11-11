@@ -1,0 +1,166 @@
+{
+    "metadata": {
+      "language": "日本語",
+      "languageCode": "ja",
+      "direction": "ltr"
+    },
+  
+    "navigation": {
+      "home": "ホーム",
+      "products": "製品",
+      "about": "私たちについて",
+      "contact": "お問い合わせ",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約"
+    },
+  
+    "products": {
+      "title": "私たちの製品",
+      "subtitle": "高品質な魚製品",
+      "categories": {
+        "rainbowTrout": {
+          "name": "ニジマス",
+          "description": "新鮮な養殖ニジマス、丁寧に加工しお届けします",
+          "details": "私たちのニジマスはフィンランド群島の清らかな水で養殖されています"
+        },
+        "whitefish": {
+          "name": "シロマス",
+          "description": "持続可能な供給源からの高品質なシロマス",
+          "details": "地元で調達されたシロマス、丁寧に加工されています"
+        },
+        "char": {
+          "name": "アークティックチャー",
+          "description": "繊細で風味豊かなアークティックチャー",
+          "details": "豊かな味わいで知られる養殖アークティックチャー"
+        },
+        "caviar": {
+          "name": "キャビア",
+          "description": "高品質なニジマスの卵",
+          "details": "秋の終わりから冬の初めにかけて入手可能な赤いキャビア"
+        }
+      },
+      "features": {
+        "sustainable": "持続可能な養殖",
+        "fresh": "新鮮な配送",
+        "quality": "高品質",
+        "local": "地元で生産"
+      },
+      "processing": {
+        "title": "加工サービス",
+        "gutting": "魚の内臓取り出し",
+        "cleaning": "魚の清掃",
+        "filleting": "フィレ加工",
+        "packaging": "真空パッケージング"
+      }
+    },
+  
+    "about": {
+      "title": "M.A.T-Fishについて",
+      "subtitle": "1970年からの高品質な魚製品",
+      "company": {
+        "history": "会社の歴史",
+        "mission": "私たちの使命",
+        "vision": "私たちのビジョン",
+        "values": "私たちの価値観"
+      },
+      "historyText": "M.A.T-Fish Ab Oyは1970年代からフィンランドのFöglö地域で、高品質な魚製品を提供しています。",
+      "missionText": "私たちの使命は、持続可能な養殖方法を守りつつ、最高品質の魚製品を提供することです。",
+      "visionText": "品質と持続可能性で知られるフィンランドの高品質な魚製品のリーダーになることです。",
+      "values": {
+        "quality": "妥協しない品質",
+        "sustainability": "環境への責任",
+        "transparency": "ビジネスの透明性",
+        "customer": "顧客満足"
+      }
+    },
+  
+    "contact": {
+      "title": "お問い合わせ",
+      "subtitle": "ご連絡ください",
+      "info": {
+        "address": "住所",
+        "phone": "電話",
+        "email": "メール",
+        "hours": "営業時間"
+      },
+      "form": {
+        "name": "名前",
+        "email": "メールアドレス",
+        "subject": "件名",
+        "message": "メッセージ",
+        "send": "メッセージを送信",
+        "required": "必須項目",
+        "success": "メッセージが正常に送信されました",
+        "error": "メッセージ送信エラー"
+      },
+      "location": {
+        "title": "所在地",
+        "address": {
+          "street": "Tingsvägen 3",
+          "city": "Föglö",
+          "postal": "22710",
+          "country": "フィンランド"
+        }
+      },
+      "hours": {
+        "weekdays": "月曜日 - 金曜日",
+        "weekend": "土曜日 - 日曜日",
+        "time": "8:00 - 16:00",
+        "closed": "休業"
+      }
+    },
+  
+    "common": {
+      "company": {
+        "name": "M.A.T-Fish Ab Oy",
+        "slogan": "高品質な魚製品",
+        "businessId": "事業者ID",
+        "vatId": "VAT ID"
+      },
+      "buttons": {
+        "readMore": "続きを読む",
+        "viewAll": "すべて表示",
+        "order": "今すぐ注文",
+        "contact": "お問い合わせ",
+        "back": "戻る",
+        "submit": "送信",
+        "cancel": "キャンセル"
+      },
+      "loading": "読み込み中...",
+      "error": "エラー",
+      "success": "成功",
+      "required": "必須",
+      "optional": "任意"
+    },
+  
+    "footer": {
+      "rights": "すべての権利を保有します",
+      "quickLinks": "クイックリンク",
+      "contact": "連絡先情報",
+      "social": {
+        "title": "フォローする",
+        "facebook": "フェイスブック",
+        "linkedin": "リンクトイン"
+      }
+    },
+  
+    "seo": {
+      "home": {
+        "title": "M.A.T-Fish - 高品質な魚製品と加工サービス",
+        "description": "フィンランドで高品質な魚製品を提供するリーディング企業。新鮮なニジマス、シロマス、アークティックチャー、持続可能な供給源からのキャビア。"
+      },
+      "products": {
+        "title": "私たちの製品 - 高品質な魚とキャビア | M.A.T-Fish",
+        "description": "高品質な魚製品のラインナップをご覧ください。ニジマス、シロマス、アークティックチャー、季節のキャビアなど新鮮で持続可能に養殖された製品をご提供します。"
+      },
+      "about": {
+        "title": "私たちについて - M.A.T-Fish Ab Oy",
+        "description": "M.A.T-Fishの歴史、価値観、フィンランドの群島における持続可能な魚養殖と加工への取り組みについて知る。"
+      },
+      "contact": {
+        "title": "お問い合わせ - M.A.T-Fish",
+        "description": "高品質な魚製品と加工サービスについてM.A.T-Fishにお問い合わせください。フィンランドのFöglöに拠点を置いています。"
+      }
+    }
+  }
+  

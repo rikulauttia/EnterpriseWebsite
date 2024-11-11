@@ -1,0 +1,165 @@
+{
+    "metadata": {
+      "language": "Suomi",
+      "languageCode": "fi",
+      "direction": "ltr"
+    },
+  
+    "navigation": {
+      "home": "Etusivu",
+      "products": "Tuotteet",
+      "about": "Tietoa meistä",
+      "contact": "Yhteystiedot",
+      "privacy": "Tietosuoja",
+      "terms": "Käyttöehdot"
+    },
+  
+    "products": {
+      "title": "Tuotteemme",
+      "subtitle": "Korkealaatuiset kalatuotteet",
+      "categories": {
+        "rainbowTrout": {
+          "name": "Kirjolohi",
+          "description": "Tuore kasvatettu kirjolohi, huolellisesti käsitelty ja toimitettu",
+          "details": "Kirjolohemme kasvatetaan Suomen saariston puhtaissa vesissä"
+        },
+        "whitefish": {
+          "name": "Siika",
+          "description": "Ensiluokkaista siikaa kestävistä lähteistä",
+          "details": "Paikallisesti tuotettu siika, huolellisesti käsitelty"
+        },
+        "char": {
+          "name": "Nieriä",
+          "description": "Herkullinen ja maukas nieriä",
+          "details": "Kasvatettu nieriä tunnetaan rikkaasta maustaan"
+        },
+        "caviar": {
+          "name": "Kaviaari",
+          "description": "Korkealaatuinen kirjolohen mäti",
+          "details": "Huolellisesti valmistettu punainen kaviaari saatavilla myöhäissyksystä alkutalveen"
+        }
+      },
+      "features": {
+        "sustainable": "Kestävästi kasvatettu",
+        "fresh": "Tuore toimitus",
+        "quality": "Ensiluokkainen laatu",
+        "local": "Paikallisesti tuotettu"
+      },
+      "processing": {
+        "title": "Käsittelypalvelut",
+        "gutting": "Kalan perkaus",
+        "cleaning": "Kalan puhdistus",
+        "filleting": "Fileoiminen",
+        "packaging": "Tyhjiöpakkaus"
+      }
+    },
+  
+    "about": {
+      "title": "Tietoa M.A.T-Fish:istä",
+      "subtitle": "Laadukkaita kalatuotteita vuodesta 1970",
+      "company": {
+        "history": "Yrityksen historia",
+        "mission": "Toiminta-ajatus",
+        "vision": "Visio",
+        "values": "Arvot"
+      },
+      "historyText": "M.A.T-Fish Ab Oy on toiminut Föglön alueella 1970-luvulta lähtien tarjoten asiakkailleen korkealaatuisia kalatuotteita.",
+      "missionText": "Tehtävämme on tarjota korkeimman laadun kalatuotteita ylläpitäen kestäviä kasvatusmenetelmiä.",
+      "visionText": "Olla Suomen johtava premium-kalatuotteiden toimittaja, tunnettu laadusta ja kestävyydestä.",
+      "values": {
+        "quality": "Tinkimätön laatu",
+        "sustainability": "Ympäristövastuu",
+        "transparency": "Liiketoiminnan läpinäkyvyys",
+        "customer": "Asiakastyytyväisyys"
+      }
+    },
+  
+    "contact": {
+      "title": "Ota yhteyttä",
+      "subtitle": "Yhteystiedot",
+      "info": {
+        "address": "Osoite",
+        "phone": "Puhelin",
+        "email": "Sähköposti",
+        "hours": "Aukioloajat"
+      },
+      "form": {
+        "name": "Nimi",
+        "email": "Sähköpostiosoite",
+        "subject": "Aihe",
+        "message": "Viesti",
+        "send": "Lähetä viesti",
+        "required": "Pakollinen kenttä",
+        "success": "Viesti lähetetty onnistuneesti",
+        "error": "Virhe viestin lähetyksessä"
+      },
+      "location": {
+        "title": "Sijaintimme",
+        "address": {
+          "street": "Tingsvägen 3",
+          "city": "Föglö",
+          "postal": "22710",
+          "country": "Suomi"
+        }
+      },
+      "hours": {
+        "weekdays": "Maanantai - Perjantai",
+        "weekend": "Lauantai - Sunnuntai",
+        "time": "8:00 - 16:00",
+        "closed": "Suljettu"
+      }
+    },
+  
+    "common": {
+      "company": {
+        "name": "M.A.T-Fish Ab Oy",
+        "slogan": "Korkealaatuisia kalatuotteita",
+        "businessId": "Y-tunnus",
+        "vatId": "ALV-tunnus"
+      },
+      "buttons": {
+        "readMore": "Lue lisää",
+        "viewAll": "Näytä kaikki",
+        "order": "Tilaa nyt",
+        "contact": "Ota yhteyttä",
+        "back": "Takaisin",
+        "submit": "Lähetä",
+        "cancel": "Peruuta"
+      },
+      "loading": "Ladataan...",
+      "error": "Virhe",
+      "success": "Onnistui",
+      "required": "Pakollinen",
+      "optional": "Valinnainen"
+    },
+  
+    "footer": {
+      "rights": "Kaikki oikeudet pidätetään",
+      "quickLinks": "Pikalinkit",
+      "contact": "Yhteystiedot",
+      "social": {
+        "title": "Seuraa meitä",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn"
+      }
+    },
+  
+    "seo": {
+      "home": {
+        "title": "M.A.T-Fish - Korkealaatuiset kalatuotteet ja -jalostus",
+        "description": "Johtava korkealaatuisten kalatuotteiden toimittaja Suomessa. Tuore kirjolohi, siika, nieriä ja kaviaari kestävistä lähteistä."
+      },
+      "products": {
+        "title": "Tuotteemme - Premium-kala ja kaviaari | M.A.T-Fish",
+        "description": "Tutustu valikoimaamme premium-kalatuotteita: kirjolohi, siika, nieriä ja sesongin kaviaari. Tuoretta ja kestävästi kasvatettua."
+      },
+      "about": {
+        "title": "Tietoa meistä - M.A.T-Fish Ab Oy",
+        "description": "Tutustu M.A.T-Fishin historiaan, arvoihin ja sitoutumiseen kestävään kalankasvatukseen ja -jalostukseen Suomen saaristossa."
+      },
+      "contact": {
+        "title": "Ota yhteyttä M.A.T-Fish - Yhteystiedot",
+        "description": "Ota yhteyttä M.A.T-Fishiin korkealaatuisten kalatuotteiden ja jalostuspalveluiden osalta. Sijaitsemme Föglössä."
+      }
+    }
+  }
