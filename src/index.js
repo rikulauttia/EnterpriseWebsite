@@ -13,7 +13,6 @@ import {
 import App from './App';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-// Import your pages
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 
@@ -97,12 +96,11 @@ const router = createBrowserRouter([
 
 // Root element
 const container = document.getElementById('root');
-const root = createRoot(container);
-
-// Prevent mounting in wrong element
 if (!container) {
   throw new Error('Failed to find the root element. The app cannot be initialized.');
 }
+
+const root = createRoot(container);
 
 // App rendering with RouterProvider
 root.render(
@@ -110,7 +108,17 @@ root.render(
     <ErrorBoundary>
       <HelmetProvider>
         <Suspense fallback={<LoadingScreen />}>
-          <RouterProvider router={router} />
+          <RouterProvider
+            router={router}
+            future={{
+              v7_startTransition: true,
+              v7_relativeSplatPath: true,
+              v7_normalizeFormMethod: true,
+              v7_partialHydration: true,
+              v7_skipActionErrorRevalidation: true,
+              v7_fetcherPersist: true // Added flag for fetcher persistence
+            }}
+          />
         </Suspense>
       </HelmetProvider>
     </ErrorBoundary>

@@ -1,5 +1,6 @@
 import React, {
   useEffect,
+  useRef,
   useState,
 } from 'react';
 
@@ -19,53 +20,33 @@ const LanguageSwitcher = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-  // Language options with their metadata
+  // Language options
   const languages = [
-    { 
-      code: 'fi', 
-      name: 'Finnish', 
-      native: 'Suomi',
-      flag: '🇫🇮'
-    },
-    { 
-      code: 'en', 
-      name: 'English', 
-      native: 'English',
-      flag: '🇬🇧'
-    },
-    { 
-      code: 'sv', 
-      name: 'Swedish', 
-      native: 'Svenska',
-      flag: '🇸🇪'
-    },
-    { 
-      code: 'ja', 
-      name: 'Japanese', 
-      native: '日本語',
-      flag: '🇯🇵'
-    }
+    { code: 'fi', name: 'Finnish', native: 'Suomi', flag: '🇫🇮' },
+    { code: 'en', name: 'English', native: 'English', flag: '🇬🇧' },
+    { code: 'sv', name: 'Swedish', native: 'Svenska', flag: '🇸🇪' },
+    { code: 'ja', name: 'Japanese', native: '日本語', flag: '🇯🇵' }
   ];
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('.language-switcher')) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
+  }, []);
 
   // Close dropdown on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  // Get current language
+  // Get current language from the URL
   const getCurrentLanguage = () => {
     const path = location.pathname;
     const langMatch = path.match(/^\/(en|fi|sv|ja)/);
@@ -76,21 +57,15 @@ const LanguageSwitcher = () => {
 
   // Handle language change
   const changeLanguage = (langCode) => {
-    // Change i18n language
     i18n.changeLanguage(langCode);
-
-    // Update URL to reflect language change
-    const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, '');
+    const pathWithoutLang = location.pathname.replace(/^\/(en|fi|sv|ja)/, '');
     const newPath = `/${langCode}${pathWithoutLang || ''}`;
-
-    // Navigate to new language path
     navigate(newPath);
     setIsOpen(false);
   };
 
   return (
-    <div className="relative language-switcher">
+    <div className="relative" ref={dropdownRef}>
       {/* Current Language Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}

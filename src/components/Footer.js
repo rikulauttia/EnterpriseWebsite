@@ -51,7 +51,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">M.A.T-Fish Ab Oy</h3>
-            <p className="text-sm mb-2">Y-tunnus: 2835881-3</p>
+            <p className="text-sm mb-2">2835881-3</p>
             <div className="flex items-center gap-2 mb-2">
               <MapPin size={16} className="flex-shrink-0" />
               <p className="text-sm">Tingsvägen 3, 22710 Föglö</p>

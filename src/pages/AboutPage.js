@@ -88,14 +88,14 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-gray-800">
       {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-20">
+      <section className="bg-blue-900 text-white py-20 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             {t('about.hero.title', 'About M.A.T-Fish')}
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             {t('about.hero.description', 'Leading fish producer in Finland, specializing in premium quality rainbow trout, whitefish, and char since 1970.')}
           </p>
         </div>
@@ -103,46 +103,32 @@ const AboutPage = () => {
 
       {/* Story Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">
-                {t('about.story.title', 'Our Story')}
-              </h2>
-              <p className="text-gray-600 mb-4">
-                {t('about.story.p1', 'M.A.T-Fish started as a small family business in the Föglö region of Finland\'s archipelago.')}
-              </p>
-              <p className="text-gray-600 mb-4">
-                {t('about.story.p2', 'For over five decades, we have been committed to providing the highest quality fish products while maintaining sustainable farming practices.')}
-              </p>
-              <p className="text-gray-600">
-                {t('about.story.p3', 'Today, we are proud to be one of Finland\'s leading suppliers of premium fish products, serving customers across the country.')}
-              </p>
-            </div>
-            <div className="relative">
-              <img 
-                src="/api/placeholder/600/400" 
-                alt={t('about.story.image')}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
+        <div className="container mx-auto px-4 text-center md:text-left">
+          <h2 className="text-3xl font-bold mb-6">
+            {t('about.story.title', 'Our Story')}
+          </h2>
+          <p className="text-gray-600 mb-4">
+            {t('about.story.p1', 'M.A.T-Fish started as a small family business in the Föglö region of Finland\'s archipelago.')}
+          </p>
+          <p className="text-gray-600 mb-4">
+            {t('about.story.p2', 'For over five decades, we have been committed to providing the highest quality fish products while maintaining sustainable farming practices.')}
+          </p>
+          <p className="text-gray-600">
+            {t('about.story.p3', 'Today, we are proud to be one of Finland\'s leading suppliers of premium fish products, serving customers across the country.')}
+          </p>
         </div>
       </section>
 
       {/* Values Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-12">
             {t('about.values.title', 'Our Values')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div 
-                key={index} 
-                className="p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+              <div key={index} className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
@@ -155,24 +141,18 @@ const AboutPage = () => {
 
       {/* Process Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-12">
             {t('about.process.title', 'Our Process')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
-              <div key={index} className="relative">
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 right-0 w-full h-0.5 bg-blue-100 transform translate-x-1/2">
-                  </div>
-                )}
-                <div className="relative z-10 p-6 bg-white rounded-lg border border-gray-100">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
-                    {step.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
+              <div key={index} className="p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4">
+                  {step.icon}
                 </div>
+                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
           </div>
@@ -181,20 +161,15 @@ const AboutPage = () => {
 
       {/* Milestones Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-12">
             {t('about.milestones.title', 'Our Journey')}
           </h2>
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
-              <div 
-                key={index}
-                className="flex flex-col md:flex-row gap-8 items-start"
-              >
-                <div className="md:w-32 flex-shrink-0">
-                  <span className="text-2xl font-bold text-blue-600">{milestone.year}</span>
-                </div>
-                <div className="flex-grow">
+              <div key={index} className="flex flex-col md:flex-row items-start gap-8">
+                <span className="md:w-32 text-2xl font-bold text-blue-600">{milestone.year}</span>
+                <div>
                   <h3 className="text-xl font-semibold mb-2">{milestone.title}</h3>
                   <p className="text-gray-600">{milestone.description}</p>
                 </div>
@@ -205,8 +180,8 @@ const AboutPage = () => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="py-20 bg-blue-900 text-white">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-blue-900 text-white text-center">
+        <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-4">
             {t('about.cta.title', 'Want to Learn More?')}
           </h2>
