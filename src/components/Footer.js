@@ -8,6 +8,7 @@ import {
   MapPin,
   Phone,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   Link,
   useLocation,
@@ -16,102 +17,31 @@ import {
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
-
-  // Language specific content
-  const translations = {
-    en: {
-      quickLinks: 'Quick Links',
-      home: 'Home',
-      products: 'Products',
-      about: 'About Us',
-      contact: 'Contact',
-      ourProducts: 'Our Products',
-      rainbowTrout: 'Rainbow Trout',
-      whitefish: 'Whitefish',
-      char: 'Char',
-      caviar: 'Caviar',
-      languages: 'Languages',
-      privacy: 'Privacy Policy',
-      terms: 'Terms of Service',
-      rights: 'All rights reserved',
-      address: 'Address',
-      tel: 'Tel'
-    },
-    fi: {
-      quickLinks: 'Pikalinkit',
-      home: 'Etusivu',
-      products: 'Tuotteet',
-      about: 'Tietoa meistä',
-      contact: 'Yhteystiedot',
-      ourProducts: 'Tuotteemme',
-      rainbowTrout: 'Kirjolohi',
-      whitefish: 'Siika',
-      char: 'Nieriä',
-      caviar: 'Kaviaari',
-      languages: 'Kielet',
-      privacy: 'Tietosuoja',
-      terms: 'Käyttöehdot',
-      rights: 'Kaikki oikeudet pidätetään',
-      address: 'Osoite',
-      tel: 'Puh'
-    },
-    sv: {
-      quickLinks: 'Snabblänkar',
-      home: 'Hem',
-      products: 'Produkter',
-      about: 'Om oss',
-      contact: 'Kontakt',
-      ourProducts: 'Våra produkter',
-      rainbowTrout: 'Regnbåge',
-      whitefish: 'Sik',
-      char: 'Röding',
-      caviar: 'Kaviar',
-      languages: 'Språk',
-      privacy: 'Integritetspolicy',
-      terms: 'Användarvillkor',
-      rights: 'Alla rättigheter förbehållna',
-      address: 'Adress',
-      tel: 'Tel'
-    },
-    ja: {
-      quickLinks: 'クイックリンク',
-      home: 'ホーム',
-      products: '製品',
-      about: '会社概要',
-      contact: 'お問い合わせ',
-      ourProducts: '当社の製品',
-      rainbowTrout: 'ニジマス',
-      whitefish: 'ホワイトフィッシュ',
-      char: 'イワナ',
-      caviar: 'キャビア',
-      languages: '言語',
-      privacy: 'プライバシーポリシー',
-      terms: '利用規約',
-      rights: '全著作権所有',
-      address: '住所',
-      tel: '電話'
-    }
-  };
-
-  // Get current language from URL or default to 'en'
-  const getCurrentLanguage = () => {
-    const path = location.pathname;
-    if (path.startsWith('/fi')) return 'fi';
-    if (path.startsWith('/sv')) return 'sv';
-    if (path.startsWith('/ja')) return 'ja';
-    return 'en';
-  };
-
-  const currentLang = getCurrentLanguage();
-  const t = translations[currentLang];
+  const { t } = useTranslation();
 
   // Language options with native names
   const languages = [
-    { code: 'en', name: 'English', native: 'English' },
     { code: 'fi', name: 'Finnish', native: 'Suomi' },
+    { code: 'en', name: 'English', native: 'English' },
     { code: 'sv', name: 'Swedish', native: 'Svenska' },
     { code: 'ja', name: 'Japanese', native: '日本語' }
   ];
+
+  // Get current language from URL
+  const getCurrentLanguage = () => {
+    const path = location.pathname;
+    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    return langMatch ? langMatch[1] : 'fi';
+  };
+
+  const currentLang = getCurrentLanguage();
+
+  // Create language path
+  const createLanguagePath = (langCode) => {
+    const currentPath = location.pathname;
+    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, '');
+    return `/${langCode}${pathWithoutLang || ''}`;
+  };
 
   return (
     <footer className="bg-gray-900 text-gray-300">
@@ -135,57 +65,63 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Phone size={16} className="flex-shrink-0" />
               <a href="tel:+358401454014" className="text-sm hover:text-white transition-colors">
-                {t.tel}: 040 1454 014
+                {t('footer.tel', 'Tel')}: 040 1454 014
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">{t.quickLinks}</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              {t('footer.quickLinks', 'Quick Links')}
+            </h3>
             <nav className="flex flex-col gap-2">
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}`} className="text-sm hover:text-white transition-colors">
-                {t.home}
+              <Link to={`/${currentLang}`} className="text-sm hover:text-white transition-colors">
+                {t('nav.home', 'Home')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/products`} className="text-sm hover:text-white transition-colors">
-                {t.products}
+              <Link to={`/${currentLang}/products`} className="text-sm hover:text-white transition-colors">
+                {t('nav.products', 'Products')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/about`} className="text-sm hover:text-white transition-colors">
-                {t.about}
+              <Link to={`/${currentLang}/about`} className="text-sm hover:text-white transition-colors">
+                {t('nav.about', 'About Us')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/contact`} className="text-sm hover:text-white transition-colors">
-                {t.contact}
+              <Link to={`/${currentLang}/contact`} className="text-sm hover:text-white transition-colors">
+                {t('nav.contact', 'Contact')}
               </Link>
             </nav>
           </div>
 
           {/* Products */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">{t.ourProducts}</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              {t('products.ourProducts', 'Our Products')}
+            </h3>
             <nav className="flex flex-col gap-2">
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/products/rainbow-trout`} className="text-sm hover:text-white transition-colors">
-                {t.rainbowTrout}
+              <Link to={`/${currentLang}/products/rainbow-trout`} className="text-sm hover:text-white transition-colors">
+                {t('products.rainbowTrout', 'Rainbow Trout')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/products/whitefish`} className="text-sm hover:text-white transition-colors">
-                {t.whitefish}
+              <Link to={`/${currentLang}/products/whitefish`} className="text-sm hover:text-white transition-colors">
+                {t('products.whitefish', 'Whitefish')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/products/char`} className="text-sm hover:text-white transition-colors">
-                {t.char}
+              <Link to={`/${currentLang}/products/char`} className="text-sm hover:text-white transition-colors">
+                {t('products.char', 'Char')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/products/caviar`} className="text-sm hover:text-white transition-colors">
-                {t.caviar}
+              <Link to={`/${currentLang}/products/caviar`} className="text-sm hover:text-white transition-colors">
+                {t('products.caviar', 'Caviar')}
               </Link>
             </nav>
           </div>
 
           {/* Languages and Social */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">{t.languages}</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">
+              {t('footer.languages', 'Languages')}
+            </h3>
             <nav className="flex flex-col gap-2">
               {languages.map((lang) => (
                 <Link
                   key={lang.code}
-                  to={`/${lang.code === 'en' ? '' : lang.code}${location.pathname.replace(/^\/(en|fi|sv|ja)?/, '')}`}
+                  to={createLanguagePath(lang.code)}
                   className={`text-sm hover:text-white transition-colors flex items-center gap-2
                     ${currentLang === lang.code ? 'text-white font-medium' : ''}`}
                 >
@@ -225,14 +161,14 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm">
-              &copy; {currentYear} M.A.T-Fish Ab Oy. {t.rights}.
+              &copy; {currentYear} M.A.T-Fish Ab Oy. {t('footer.rights', 'All rights reserved')}.
             </p>
             <nav className="flex gap-6">
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/privacy`} className="text-sm hover:text-white transition-colors">
-                {t.privacy}
+              <Link to={`/${currentLang}/privacy`} className="text-sm hover:text-white transition-colors">
+                {t('footer.privacy', 'Privacy Policy')}
               </Link>
-              <Link to={`/${currentLang === 'en' ? '' : currentLang}/terms`} className="text-sm hover:text-white transition-colors">
-                {t.terms}
+              <Link to={`/${currentLang}/terms`} className="text-sm hover:text-white transition-colors">
+                {t('footer.terms', 'Terms of Service')}
               </Link>
             </nav>
           </div>

@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
 
 import {
   Check,
@@ -20,16 +23,16 @@ const LanguageSwitcher = () => {
   // Language options with their metadata
   const languages = [
     { 
-      code: 'en', 
-      name: 'English', 
-      native: 'English',
-      flag: '🇬🇧'
-    },
-    { 
       code: 'fi', 
       name: 'Finnish', 
       native: 'Suomi',
       flag: '🇫🇮'
+    },
+    { 
+      code: 'en', 
+      name: 'English', 
+      native: 'English',
+      flag: '🇬🇧'
     },
     { 
       code: 'sv', 
@@ -45,13 +48,28 @@ const LanguageSwitcher = () => {
     }
   ];
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.language-switcher')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   // Get current language
   const getCurrentLanguage = () => {
     const path = location.pathname;
-    if (path.startsWith('/fi')) return 'fi';
-    if (path.startsWith('/sv')) return 'sv';
-    if (path.startsWith('/ja')) return 'ja';
-    return 'en';
+    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    return langMatch ? langMatch[1] : 'fi';
   };
 
   const currentLang = getCurrentLanguage();
@@ -63,26 +81,24 @@ const LanguageSwitcher = () => {
 
     // Update URL to reflect language change
     const currentPath = location.pathname;
-    const newPath = currentPath
-      .replace(/^\/(en|fi|sv|ja)/, '') // Remove current language prefix
-      .replace(/^\//, ''); // Remove leading slash if present
+    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, '');
+    const newPath = `/${langCode}${pathWithoutLang || ''}`;
 
     // Navigate to new language path
-    navigate(`/${langCode === 'en' ? '' : langCode}/${newPath}`);
-    
-    // Close dropdown
+    navigate(newPath);
     setIsOpen(false);
   };
 
   return (
-    <div className="relative">
+    <div className="relative language-switcher">
       {/* Current Language Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-100 
                    dark:hover:bg-gray-800 transition-colors"
         aria-expanded={isOpen}
-        aria-haspopup="true"
+        aria-haspopup="listbox"
+        aria-label="Select language"
       >
         <Globe className="w-4 h-4" />
         <span className="hidden sm:inline">
@@ -99,33 +115,31 @@ const LanguageSwitcher = () => {
 
       {/* Language Dropdown */}
       {isOpen && (
-        <>
-          {/* Backdrop for closing dropdown */}
-          <div 
-            className="fixed inset-0 z-40"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          <div className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-gray-900 
-                        rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
-            {languages.map((language) => (
-              <button
-                key={language.code}
-                onClick={() => changeLanguage(language.code)}
-                className={`w-full px-4 py-2 text-left flex items-center gap-3 
-                           hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors
-                           ${currentLang === language.code ? 'text-blue-600 dark:text-blue-400' : 
-                             'text-gray-700 dark:text-gray-300'}`}
-              >
-                <span className="text-lg">{language.flag}</span>
-                <span className="flex-1">{language.native}</span>
-                {currentLang === language.code && (
-                  <Check className="w-4 h-4" />
-                )}
-              </button>
-            ))}
-          </div>
-        </>
+        <div 
+          className="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-gray-900 
+                     rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50"
+          role="listbox"
+          aria-label="Select language"
+        >
+          {languages.map((language) => (
+            <button
+              key={language.code}
+              onClick={() => changeLanguage(language.code)}
+              className={`w-full px-4 py-2 text-left flex items-center gap-3 
+                         hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors
+                         ${currentLang === language.code ? 'text-blue-600 dark:text-blue-400' : 
+                           'text-gray-700 dark:text-gray-300'}`}
+              role="option"
+              aria-selected={currentLang === language.code}
+            >
+              <span className="text-lg" aria-hidden="true">{language.flag}</span>
+              <span className="flex-1">{language.native}</span>
+              {currentLang === language.code && (
+                <Check className="w-4 h-4" aria-hidden="true" />
+              )}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );

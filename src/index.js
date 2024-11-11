@@ -5,8 +5,17 @@ import React, { Suspense } from 'react';
 
 import { createRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
 
 import App from './App';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+// Import your pages
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
 
 // Loading component for Suspense
 const LoadingScreen = () => (
@@ -20,7 +29,6 @@ const LoadingScreen = () => (
 
 // Error logging
 const logError = (error, errorInfo) => {
-  // In production, you would send this to your error tracking service
   console.error('Application Error:', error);
   console.error('Error Info:', errorInfo);
 };
@@ -67,11 +75,25 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// Performance monitoring
-const reportWebVitals = (metric) => {
-  // In production, send to your analytics service
-  console.log(metric);
-};
+// Create router configuration
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: ':lang',
+        children: [
+          { index: true, element: <HomePage /> },
+          { path: 'about', element: <AboutPage /> },
+          { path: 'contact', element: <ContactPage /> },
+          { path: 'products', element: <ProductsPage /> },
+          { path: 'products/:productId', element: <ProductsPage /> }
+        ]
+      }
+    ]
+  }
+]);
 
 // Root element
 const container = document.getElementById('root');
@@ -82,39 +104,18 @@ if (!container) {
   throw new Error('Failed to find the root element. The app cannot be initialized.');
 }
 
-// App rendering
+// App rendering with RouterProvider
 root.render(
   <React.StrictMode>
     <ErrorBoundary>
       <HelmetProvider>
         <Suspense fallback={<LoadingScreen />}>
-          <App />
+          <RouterProvider router={router} />
         </Suspense>
       </HelmetProvider>
     </ErrorBoundary>
   </React.StrictMode>
 );
-
-// Report web vitals
-reportWebVitals();
-
-// Enable hot reloading in development
-if (import.meta.hot) {
-  import.meta.hot.accept();
-}
-
-// Handle service worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('SW registered:', registration);
-      })
-      .catch(error => {
-        console.log('SW registration failed:', error);
-      });
-  });
-}
 
 // Handle uncaught errors
 window.addEventListener('unhandledrejection', event => {
@@ -124,3 +125,10 @@ window.addEventListener('unhandledrejection', event => {
 window.addEventListener('error', event => {
   logError(event.error, 'Uncaught Error');
 });
+
+// Report web vitals
+const reportWebVitals = (metric) => {
+  console.log(metric);
+};
+
+reportWebVitals();
