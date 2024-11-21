@@ -1,37 +1,188 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Facebook,
-  Globe,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-} from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import {
-  Link,
-  useLocation,
-} from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
+import styled from "styled-components";
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const FooterWrapper = styled.footer`
+  background-color: #003366;
+  color: #ffffff;
+  padding: 2rem 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0 0.75rem;
+  }
+`;
+
+const FooterContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+`;
+
+const TopSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
+  }
+`;
+
+const FooterSection = styled.div`
+  margin-bottom: 1rem;
+  margin-right: 2rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+`;
+
+const FooterTitle = styled.h3`
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+`;
+
+const FooterText = styled.p`
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #e5e5e5;
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+`;
+
+const FooterLink = styled(Link)`
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #4d9fff;
+    transition: color 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
+  }
+`;
+
+const BottomSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+`;
+
+const Copyright = styled.div`
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+    justify-content: center;
+  }
+`;
+
+const SocialIcon = styled.a`
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease;
+
+    @media (max-width: 768px) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &:hover svg {
+    fill: #4d9fff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+    margin: -0.5rem;
+  }
+`;
+
+const LanguageSelector = styled.div`
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+`;
+
+const LanguageLink = styled(Link)`
+  color: ${(props) => (props.$isActive ? "#4d9fff" : "#ffffff")};
+  text-decoration: none;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #4d9fff;
+    transition: color 0.3s ease;
+  }
+`;
+
+function Footer() {
   const location = useLocation();
   const { t } = useTranslation();
-
-  // Language options with native names
-  const languages = [
-    { code: 'fi', name: 'Finnish', native: 'Suomi' },
-    { code: 'en', name: 'English', native: 'English' },
-    { code: 'sv', name: 'Swedish', native: 'Svenska' },
-    { code: 'ja', name: 'Japanese', native: '日本語' }
-  ];
 
   // Get current language from URL
   const getCurrentLanguage = () => {
     const path = location.pathname;
     const langMatch = path.match(/^\/(en|fi|sv|ja)/);
-    return langMatch ? langMatch[1] : 'fi';
+    return langMatch ? langMatch[1] : "fi";
   };
 
   const currentLang = getCurrentLanguage();
@@ -39,143 +190,120 @@ const Footer = () => {
   // Create language path
   const createLanguagePath = (langCode) => {
     const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, '');
-    return `/${langCode}${pathWithoutLang || ''}`;
+    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, "");
+    return `/${langCode}${pathWithoutLang || ""}`;
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">M.A.T-Fish Ab Oy</h3>
-            <p className="text-sm mb-2">2835881-3</p>
-            <div className="flex items-center gap-2 mb-2">
-              <MapPin size={16} className="flex-shrink-0" />
-              <p className="text-sm">Tingsvägen 3, 22710 Föglö</p>
-            </div>
-            <div className="flex items-center gap-2 mb-2">
-              <Mail size={16} className="flex-shrink-0" />
-              <a href="mailto:info@matfish.fi" className="text-sm hover:text-white transition-colors">
+    <FooterWrapper>
+      <FooterContent>
+        <TopSection>
+          <FooterSection>
+            <FooterTitle>M.A.T-Fish Ab Oy</FooterTitle>
+            <FooterText>Tingsvägen 3</FooterText>
+            <FooterText>22710 Föglö</FooterText>
+            <FooterText>2835881-3</FooterText>
+          </FooterSection>
+          <FooterSection>
+            <FooterTitle>{t("footer.menu", "Menu")}</FooterTitle>
+            <FooterLink to={`/${currentLang}`}>
+              {t("nav.home", "Home")}
+            </FooterLink>
+            <FooterLink to={`/${currentLang}/products`}>
+              {t("nav.products", "Products")}
+            </FooterLink>
+            <FooterLink to={`/${currentLang}/about`}>
+              {t("nav.about", "About")}
+            </FooterLink>
+            <FooterLink to={`/${currentLang}/contact`}>
+              {t("nav.contact", "Contact")}
+            </FooterLink>
+          </FooterSection>
+          <FooterSection>
+            <FooterTitle>{t("footer.contact", "Contact us")}</FooterTitle>
+            <FooterText>
+              <a href="mailto:info@matfish.fi" className="hover:text-[#4d9fff]">
                 info@matfish.fi
               </a>
-            </div>
-            <div className="flex items-center gap-2">
-              <Phone size={16} className="flex-shrink-0" />
-              <a href="tel:+358401454014" className="text-sm hover:text-white transition-colors">
-                {t('footer.tel', 'Tel')}: 040 1454 014
+            </FooterText>
+            <FooterText>
+              <a href="tel:0401454014" className="hover:text-[#4d9fff]">
+                040 1454 014
               </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              {t('footer.quickLinks', 'Quick Links')}
-            </h3>
-            <nav className="flex flex-col gap-2">
-              <Link to={`/${currentLang}`} className="text-sm hover:text-white transition-colors">
-                {t('nav.home', 'Home')}
-              </Link>
-              <Link to={`/${currentLang}/products`} className="text-sm hover:text-white transition-colors">
-                {t('nav.products', 'Products')}
-              </Link>
-              <Link to={`/${currentLang}/about`} className="text-sm hover:text-white transition-colors">
-                {t('nav.about', 'About Us')}
-              </Link>
-              <Link to={`/${currentLang}/contact`} className="text-sm hover:text-white transition-colors">
-                {t('nav.contact', 'Contact')}
-              </Link>
-            </nav>
-          </div>
-
-          {/* Products */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              {t('products.ourProducts', 'Our Products')}
-            </h3>
-            <nav className="flex flex-col gap-2">
-              <Link to={`/${currentLang}/products/rainbow-trout`} className="text-sm hover:text-white transition-colors">
-                {t('products.rainbowTrout', 'Rainbow Trout')}
-              </Link>
-              <Link to={`/${currentLang}/products/whitefish`} className="text-sm hover:text-white transition-colors">
-                {t('products.whitefish', 'Whitefish')}
-              </Link>
-              <Link to={`/${currentLang}/products/char`} className="text-sm hover:text-white transition-colors">
-                {t('products.char', 'Char')}
-              </Link>
-              <Link to={`/${currentLang}/products/caviar`} className="text-sm hover:text-white transition-colors">
-                {t('products.caviar', 'Caviar')}
-              </Link>
-            </nav>
-          </div>
-
-          {/* Languages and Social */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              {t('footer.languages', 'Languages')}
-            </h3>
-            <nav className="flex flex-col gap-2">
-              {languages.map((lang) => (
-                <Link
-                  key={lang.code}
-                  to={createLanguagePath(lang.code)}
-                  className={`text-sm hover:text-white transition-colors flex items-center gap-2
-                    ${currentLang === lang.code ? 'text-white font-medium' : ''}`}
-                >
-                  <Globe size={16} className="flex-shrink-0" />
-                  <span>{lang.native}</span>
-                </Link>
-              ))}
-            </nav>
-            
-            {/* Social Links */}
-            <div className="flex gap-4 mt-6">
-              <a
-                href="https://facebook.com/matfish"
+            </FooterText>
+          </FooterSection>
+        </TopSection>
+        <BottomSection>
+          <Copyright>
+            <FooterText>
+              © {new Date().getFullYear()} M.A.T-Fish Ab Oy.{" "}
+              {t("footer.rights", "All rights reserved")}
+            </FooterText>
+          </Copyright>
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <SocialIcons>
+              <SocialIcon
+                href="https://www.linkedin.com/company/m-a-t-fish-ab-oy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="https://linkedin.com/company/matfish"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
-              </a>
-            </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon
+                href="https://www.facebook.com/matfishoy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </SocialIcon>
+              <SocialIcon
+                href="https://www.instagram.com/matfishoy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                </svg>
+              </SocialIcon>
+            </SocialIcons>
+            <LanguageSelector>
+              <LanguageLink to="/fi" $isActive={currentLang === "fi"}>
+                FI
+              </LanguageLink>
+              <LanguageLink to="/sv" $isActive={currentLang === "sv"}>
+                SV
+              </LanguageLink>
+              <LanguageLink to="/en" $isActive={currentLang === "en"}>
+                EN
+              </LanguageLink>
+              <LanguageLink to="/ja" $isActive={currentLang === "ja"}>
+                JA
+              </LanguageLink>
+            </LanguageSelector>
           </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm">
-              &copy; {currentYear} M.A.T-Fish Ab Oy. {t('footer.rights', 'All rights reserved')}.
-            </p>
-            <nav className="flex gap-6">
-              <Link to={`/${currentLang}/privacy`} className="text-sm hover:text-white transition-colors">
-                {t('footer.privacy', 'Privacy Policy')}
-              </Link>
-              <Link to={`/${currentLang}/terms`} className="text-sm hover:text-white transition-colors">
-                {t('footer.terms', 'Terms of Service')}
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </footer>
+        </BottomSection>
+      </FooterContent>
+    </FooterWrapper>
   );
-};
+}
 
 export default Footer;
