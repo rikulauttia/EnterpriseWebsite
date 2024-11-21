@@ -1,133 +1,209 @@
-import React from 'react';
+import React from "react";
 
-import {
-  ArrowRight,
-  Fish,
-  Leaf,
-  ShieldCheck,
-  Waves,
-} from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import heroImage from '../images/hero/hero-background.jpg';
+import heroImage from "../images/hero/hero-background.jpg";
+
+const HeroSection = styled.section`
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  }
+`;
+
+const HeroImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  animation: zoomOut 20s ease-in-out infinite alternate;
+
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+`;
+
+const FeatureCard = styled(motion.div)`
+  position: relative;
+  padding: 2rem 0;
+  border-left: 2px solid #e5e7eb;
+  padding-left: 2rem;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: #2563eb;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+  }
+`;
 
 const HomePage = () => {
   const { t } = useTranslation();
 
   const features = [
     {
-      icon: <Fish className="w-6 h-6 fish-icon" />,
-      title: t('home.features.quality.title', 'Premium Fish'),
-      description: t('home.features.quality.description', 'Superior quality fish from Finnish waters')
+      title: t("home.features.quality.title", "Premium Quality"),
+      description: t(
+        "home.features.quality.description",
+        "Carefully selected premium fish from pristine Finnish archipelago waters"
+      ),
     },
     {
-      icon: <Waves className="w-6 h-6" />,
-      title: t('home.features.fresh.title', 'Fresh From Water'),
-      description: t('home.features.fresh.description', 'Direct from our local fish farms')
+      title: t("home.features.fresh.title", "Freshness Guaranteed"),
+      description: t(
+        "home.features.fresh.description",
+        "Direct delivery from our local facilities ensuring optimal quality"
+      ),
     },
     {
-      icon: <ShieldCheck className="w-6 h-6" />,
-      title: t('home.features.sustainable.title', 'Sustainable'),
-      description: t('home.features.sustainable.description', 'Environmentally conscious practices')
+      title: t("home.features.sustainable.title", "Sustainable Practice"),
+      description: t(
+        "home.features.sustainable.description",
+        "Committed to environmentally conscious and sustainable fishing methods"
+      ),
     },
     {
-      icon: <Leaf className="w-6 h-6" />,
-      title: t('home.features.local.title', 'Local Production'),
-      description: t('home.features.local.description', 'Produced in Finnish archipelago')
-    }
+      title: t("home.features.local.title", "Local Excellence"),
+      description: t(
+        "home.features.local.description",
+        "Supporting local communities and traditions in Finnish archipelago"
+      ),
+    },
   ];
 
   return (
-    <div className="min-h-screen animate-fade-in">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen hero-section">
-        <img 
-          src={heroImage}
-          alt="Finnish archipelago"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <h1 className="text-7xl md:text-8xl font-bold text-white tracking-wider text-center mb-8 text-shadow animate-slide-up">
+      <HeroSection>
+        <HeroImage src={heroImage} alt="Finnish archipelago" loading="eager" />
+        <motion.div
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <motion.h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6 tracking-wider"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
             M.A.T FISH
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl text-center px-4 text-shadow-sm">
-            {t('home.hero.subtitle', 'Sustainable fish farming from the pristine waters of Finnish archipelago')}
-          </p>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
-        <div className="container">
-          <div className="flex justify-center space-x-8 py-6">
-            {['Products', 'About', 'Sustainability', 'Contact'].map((item) => (
-              <Link 
-                key={item}
-                to={`/${item.toLowerCase()}`} 
-                className="nav-link text-gray-800 hover:text-blue-600"
-              >
-                {t(`nav.${item.toLowerCase()}`, item)}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </nav>
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl lg:text-2xl text-white text-center max-w-3xl mx-auto font-light"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            {t("home.hero.subtitle")}
+          </motion.p>
+        </motion.div>
+      </HeroSection>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {features.map((feature, index) => (
-              <div 
-                key={index}
-                className="card card-hover p-6 animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 mb-6">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {features.map((feature, index) => (
+                <FeatureCard
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                >
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </FeatureCard>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-24 bg-gradient-secondary">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">{t('home.about.title', 'Our Commitment')}</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              {t('home.about.description', 'We are dedicated to sustainable fish farming in the Finnish archipelago. Our methods respect both tradition and innovation, ensuring the highest quality products while protecting our precious marine environment.')}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              {t("home.about.title")}
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              {t("home.about.description")}
             </p>
             <Link
               to="/about"
-              className="btn-primary"
+              className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
             >
-              {t('home.about.link', 'Learn more about us')} <ArrowRight className="w-5 h-5 ml-2" />
+              {t("home.about.link")}
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-gradient-primary text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            {t('home.contact.title', 'Get in Touch')}
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            {t('home.contact.description', 'Interested in our products? Contact us to learn more about our sustainable fish farming practices and premium products.')}
-          </p>
-          <Link
-            to="/contact"
-            className="btn-secondary"
+      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            {t('home.contact.button', 'Contact Us')} <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {t("home.contact.title")}
+            </h2>
+            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              {t("home.contact.description")}
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 rounded-lg bg-white text-blue-600 hover:bg-gray-100 transition-colors duration-300"
+            >
+              {t("home.contact.button")}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
