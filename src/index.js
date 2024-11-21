@@ -1,20 +1,31 @@
-import './styles/index.css';
-import './i18n';
+import "./styles/index.css";
+import "./i18n";
 
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 
-import { createRoot } from 'react-dom/client';
-import { HelmetProvider } from 'react-helmet-async';
+import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import App from './App';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import HomePage from './pages/HomePage';
-import ProductsPage from './pages/ProductsPage';
+import App from "./App";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import HomePage from "./pages/HomePage";
+import ProductsPage from "./pages/ProductsPage";
+
+const DefaultLanguageRedirect = () => {
+  const userLanguage = navigator.language.split("-")[0];
+  const supportedLanguages = ["fi", "sv", "en", "ja"];
+  // Use user's language if supported, otherwise default to 'en'
+  const defaultLang = supportedLanguages.includes(userLanguage)
+    ? userLanguage
+    : "en";
+  return <Navigate to={`/${defaultLang}`} replace />;
+};
 
 // Loading component for Suspense
 const LoadingScreen = () => (
@@ -28,8 +39,8 @@ const LoadingScreen = () => (
 
 // Error logging
 const logError = (error, errorInfo) => {
-  console.error('Application Error:', error);
-  console.error('Error Info:', errorInfo);
+  console.error("Application Error:", error);
+  console.error("Error Info:", errorInfo);
 };
 
 // Error boundary component
@@ -56,7 +67,8 @@ class ErrorBoundary extends React.Component {
               Something went wrong
             </h1>
             <p className="text-gray-600 mb-6">
-              We apologize for the inconvenience. Please try refreshing the page.
+              We apologize for the inconvenience. Please try refreshing the
+              page.
             </p>
             <button
               onClick={() => window.location.reload()}
@@ -77,32 +89,38 @@ class ErrorBoundary extends React.Component {
 // Create router configuration
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
-        path: ':lang',
+        index: true,
+        element: <DefaultLanguageRedirect />, // Use the new component
+      },
+      {
+        path: ":lang",
         children: [
           { index: true, element: <HomePage /> },
-          { path: 'about', element: <AboutPage /> },
-          { path: 'contact', element: <ContactPage /> },
-          { path: 'products', element: <ProductsPage /> },
-          { path: 'products/:productId', element: <ProductsPage /> }
-        ]
-      }
-    ]
-  }
+          { path: "about", element: <AboutPage /> },
+          { path: "contact", element: <ContactPage /> },
+          { path: "products", element: <ProductsPage /> },
+          { path: "products/:productId", element: <ProductsPage /> },
+        ],
+      },
+    ],
+  },
 ]);
 
 // Root element
-const container = document.getElementById('root');
+const container = document.getElementById("root");
 if (!container) {
-  throw new Error('Failed to find the root element. The app cannot be initialized.');
+  throw new Error(
+    "Failed to find the root element. The app cannot be initialized."
+  );
 }
 
 const root = createRoot(container);
 
-// App rendering with RouterProvider
+// App rendering with RouterProvider and all v7 future flags
 root.render(
   <React.StrictMode>
     <ErrorBoundary>
@@ -111,12 +129,14 @@ root.render(
           <RouterProvider
             router={router}
             future={{
+              // Existing flags
               v7_startTransition: true,
               v7_relativeSplatPath: true,
-              v7_normalizeFormMethod: true,
-              v7_partialHydration: true,
-              v7_skipActionErrorRevalidation: true,
-              v7_fetcherPersist: true // Added flag for fetcher persistence
+              // New flags to address warnings
+              v7_fetcherPersist: true, // Addresses fetcher persistence warning
+              v7_normalizeFormMethod: true, // Addresses formMethod normalization warning
+              v7_partialHydration: true, // Addresses RouterProvider hydration warning
+              v7_skipActionErrorRevalidation: true, // Addresses 4xx/5xx action revalidation warning
             }}
           />
         </Suspense>
@@ -126,12 +146,12 @@ root.render(
 );
 
 // Handle uncaught errors
-window.addEventListener('unhandledrejection', event => {
-  logError(event.reason, 'Unhandled Promise Rejection');
+window.addEventListener("unhandledrejection", (event) => {
+  logError(event.reason, "Unhandled Promise Rejection");
 });
 
-window.addEventListener('error', event => {
-  logError(event.error, 'Uncaught Error');
+window.addEventListener("error", (event) => {
+  logError(event.error, "Uncaught Error");
 });
 
 // Report web vitals
