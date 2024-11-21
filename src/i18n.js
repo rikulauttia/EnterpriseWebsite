@@ -1,12 +1,12 @@
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+import { initReactI18next } from "react-i18next";
 
 // Import translation files directly
-import enTranslation from './locales/en/translation.json';
-import fiTranslation from './locales/fi/translation.json';
-import jaTranslation from './locales/ja/translation.json';
-import svTranslation from './locales/sv/translation.json';
+import enTranslation from "./locales/en/translation.json";
+import fiTranslation from "./locales/fi/translation.json";
+import jaTranslation from "./locales/ja/translation.json";
+import svTranslation from "./locales/sv/translation.json";
 
 i18n
   .use(LanguageDetector)
@@ -14,22 +14,31 @@ i18n
   .init({
     resources: {
       en: {
-        translation: enTranslation
+        translation: enTranslation,
       },
       fi: {
-        translation: fiTranslation
+        translation: fiTranslation,
       },
       sv: {
-        translation: svTranslation
+        translation: svTranslation,
       },
       ja: {
-        translation: jaTranslation
-      }
+        translation: jaTranslation,
+      },
     },
-    fallbackLng: 'en',
+    fallbackLng: "en",
+    supportedLngs: ["en", "fi", "sv", "ja"],
+    detection: {
+      order: ["path", "navigator"],
+      lookupFromPathIndex: 0,
+      checkWhitelist: true,
+    },
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
+    react: {
+      useSuspense: true,
+    },
   });
 
 export default i18n;
