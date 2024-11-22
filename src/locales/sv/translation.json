@@ -14,6 +14,40 @@
     "terms": "Användarvillkor"
   },
 
+  "home": {
+    "hero": {
+      "subtitle": "Hållbart fiskodling från den finska skärgårdens rena vatten"
+    },
+    "features": {
+      "quality": {
+        "title": "Premium Kvalitet",
+        "description": "Noggrant utvald premiumfisk från den finska skärgårdens rena vatten"
+      },
+      "fresh": {
+        "title": "Garanterad Färskhet",
+        "description": "Direktleverans från våra lokala anläggningar för optimal kvalitet"
+      },
+      "sustainable": {
+        "title": "Hållbar Verksamhet",
+        "description": "Engagerade i miljömedvetna och hållbara fiskemetoder"
+      },
+      "local": {
+        "title": "Lokal Excellence",
+        "description": "Stödjer lokala samhällen och traditioner i den finska skärgården"
+      }
+    },
+    "about": {
+      "title": "Vårt Åtagande",
+      "description": "Vi är dedikerade till hållbar fiskodling i den finska skärgården. Våra metoder respekterar både tradition och innovation, vilket säkerställer produkter av högsta kvalitet samtidigt som vi skyddar vår värdefulla havsmiljö.",
+      "link": "Läs mer om oss"
+    },
+    "contact": {
+      "title": "Kontakta Oss",
+      "description": "Intresserad av våra produkter? Kontakta oss för att lära dig mer om våra hållbara fiskodlingsmetoder och premiumprodukter.",
+      "button": "Kontakta oss"
+    }
+  },
+
   "products": {
     "title": "Våra produkter",
     "subtitle": "Fiskprodukter av högsta kvalitet",
