@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -8,20 +8,36 @@ import styled from "styled-components";
 const Section = styled.section`
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 4rem;
 `;
 
 const GradientBackground = styled(motion.div)`
   background: linear-gradient(135deg, #003366 0%, #004d99 100%);
   position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+  }
 `;
 
 const ContactCard = styled(motion.div)`
-  background: white;
-  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 1rem;
   padding: 2.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.02),
+    0 12px 16px rgba(0, 51, 102, 0.04), 0 0 1px rgba(0, 51, 102, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(229, 231, 235, 0.7);
 
   &::before {
     content: "";
@@ -35,17 +51,20 @@ const ContactCard = styled(motion.div)`
     transition: opacity 0.3s ease;
   }
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 51, 102, 0.08),
+        0 8px 16px rgba(0, 51, 102, 0.04);
 
-    &::before {
-      opacity: 1;
+      &::before {
+        opacity: 1;
+      }
     }
   }
 
   @media (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 `;
 
@@ -55,10 +74,20 @@ const ContactLink = styled.a`
   gap: 0.75rem;
   color: #1e293b;
   transition: all 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: transparent;
 
-  &:hover {
-    color: #003366;
-    transform: translateX(5px);
+  @media (hover: hover) {
+    &:hover {
+      color: #003366;
+      transform: translateX(5px);
+      background: rgba(0, 51, 102, 0.05);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
   }
 `;
 
@@ -67,8 +96,9 @@ const MapContainer = styled.div`
   width: 100%;
   height: 500px;
   overflow: hidden;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.02),
+    0 12px 16px rgba(0, 51, 102, 0.04);
 
   iframe {
     width: 100%;
@@ -83,6 +113,13 @@ const MapContainer = styled.div`
 
 const ContactPage = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
+  }, []);
 
   const contactPersons = [
     {
@@ -105,49 +142,74 @@ const ContactPage = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       {/* Hero Section */}
       <GradientBackground>
         <Section className="pt-32 pb-20">
-          <div className="container mx-auto px-4 max-w-6xl">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
               className="text-center"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <motion.h1
+                variants={itemVariants}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
+              >
                 {t("contact.title", "Get in Touch")}
-              </h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              </motion.h1>
+              <motion.p
+                variants={itemVariants}
+                className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed"
+              >
                 {t(
                   "contactpage.subtitle",
                   "Connect with our team of experts to discuss your premium fish needs"
                 )}
-              </p>
+              </motion.p>
             </motion.div>
           </div>
         </Section>
       </GradientBackground>
 
       {/* Team Section */}
-      <Section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <Section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {contactPersons.map((person, index) => (
               <ContactCard
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
               >
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                   {person.name}
                 </h3>
-                <p className="text-lg text-gray-600 mb-6">{person.title}</p>
-                <div className="space-y-4">
+                <p className="text-lg text-gray-600 mb-8">{person.title}</p>
+                <div className="space-y-3">
                   <ContactLink
                     href={`tel:${person.contacts.mobile.replace(/\s/g, "")}`}
                   >
@@ -173,22 +235,29 @@ const ContactPage = () => {
 
       {/* Location Section */}
       <Section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <motion.h2
+              variants={itemVariants}
+              className="text-3xl md:text-5xl font-bold text-gray-900 mb-4"
+            >
               {t("contactpage.location.title", "Our Location")}
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            </motion.h2>
+            <motion.p
+              variants={itemVariants}
+              className="text-xl text-gray-600 mb-8"
+            >
               {t(
                 "contactpage.location.subtitle",
                 "Located in the heart of Finnish archipelago"
               )}
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
@@ -196,7 +265,7 @@ const ContactPage = () => {
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     M.A.T-Fish Ab Oy
                   </h3>
                   <p className="text-lg text-gray-600">Tingsvägen 3</p>

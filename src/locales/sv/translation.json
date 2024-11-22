@@ -136,14 +136,14 @@
 
   "contactpage": {
     "title": "Kontakta oss",
-    "subtitle": "Anslut dig till vårt team av experter för att diskutera dina premiumfiskbehov",
+    "subtitle": "Kontakta vårt expertteam för att diskutera dina fiskbehov.",
     "roles": {
       "ceo": "Verkställande direktör",
       "sales": "Försäljningsrepresentant"
     },
     "location": {
       "title": "Vår plats",
-      "subtitle": "Beläget i hjärtat av den finska skärgården"
+      "subtitle": "Vi är belägna i hjärtat av den finska skärgården."
     }
   },
 

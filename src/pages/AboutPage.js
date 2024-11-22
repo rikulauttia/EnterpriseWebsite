@@ -100,22 +100,22 @@ const AboutPage = () => {
 
   const timeline = [
     {
-      year: "1970",
+      year: "2010",
       title: t("about.milestones.founding.title"),
       description: t("about.milestones.founding.description"),
     },
     {
-      year: "1985",
+      year: "2012",
       title: t("about.milestones.expansion.title"),
       description: t("about.milestones.expansion.description"),
     },
     {
-      year: "2000",
+      year: "2014",
       title: t("about.milestones.modernization.title"),
       description: t("about.milestones.modernization.description"),
     },
     {
-      year: "2015",
+      year: "2018",
       title: t("about.milestones.sustainability.title"),
       description: t("about.milestones.sustainability.description"),
     },

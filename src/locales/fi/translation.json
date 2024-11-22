@@ -136,14 +136,14 @@
 
   "contactpage": {
     "title": "Ota yhteyttä",
-    "subtitle": "Keskustele premium-kalatarpeistasi asiantuntijatiimimme kanssa",
+    "subtitle": "Ota yhteyttä asiantuntijatiimiimme keskustellaksesi kalatarpeistasi.",
     "roles": {
       "ceo": "Toimitusjohtaja",
       "sales": "Myyntiedustaja"
     },
     "location": {
       "title": "Sijaintimme",
-      "subtitle": "Sijaitsee Suomen saariston sydämessä"
+      "subtitle": "Sijaitsemme Suomen saariston sydämessä."
     }
   },
 
