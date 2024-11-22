@@ -138,7 +138,7 @@ const ProductsPage = () => {
 
   const getCurrentLanguage = () => {
     const path = location.pathname;
-    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    const langMatch = path.match(/^\/(en|fi|sv)/);
     return langMatch ? langMatch[1] : "en";
   };
 
