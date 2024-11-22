@@ -85,22 +85,52 @@
   },
 
   "about": {
-    "title": "Om M.A.T-Fish",
-    "subtitle": "Kvalitetsfiskprodukter sedan 1970",
-    "company": {
-      "history": "Företagshistoria",
-      "mission": "Vår mission",
-      "vision": "Vår vision",
-      "values": "Våra värderingar"
+    "hero": {
+      "title": "Om M.A.T Fish",
+      "description": "Ett fiskodlingsföretag från den finska skärgården, grundat 1970, dedikerat till kvalitet och hållbarhet."
     },
-    "historyText": "M.A.T-Fish Ab Oy har varit verksamt i Föglö-regionen sedan 1970-talet och levererar fiskprodukter av högsta kvalitet till våra kunder.",
-    "missionText": "Vår mission är att tillhandahålla fiskprodukter av högsta kvalitet samtidigt som vi upprätthåller hållbara odlingsmetoder.",
-    "visionText": "Att vara den ledande leverantören av premiumfiskprodukter i Finland, känd för kvalitet och hållbarhet.",
     "values": {
-      "quality": "Kompromisslös kvalitet",
-      "sustainability": "Miljöansvar",
-      "transparency": "Affärstransparens",
-      "customer": "Kundnöjdhet"
+      "title": "Våra värderingar",
+      "quality": {
+        "title": "Kvalitetsexcellens",
+        "description": "Vi upprätthåller högsta standard genom hela vår verksamhet, från odling till leverans. Varje fisk odlas med omsorg i den finska skärgårdens rena vatten."
+      },
+      "sustainability": {
+        "title": "Miljöengagemang",
+        "description": "Våra odlingsmetoder är utformade för att skydda skärgårdens unika miljö. Vi tror på hållbar tillväxt som respekterar naturens balans."
+      },
+      "responsibility": {
+        "title": "Socialt ansvar",
+        "description": "Vi är stolta över att stödja vårt lokalsamhälle och upprätthålla starka relationer med våra partners, anställda och kunder."
+      },
+      "community": {
+        "title": "Lokalt arv",
+        "description": "Djupt rotade i den finska skärgården bevarar vi traditionell kunskap samtidigt som vi anammar moderna hållbara metoder."
+      }
+    },
+    "milestones": {
+      "title": "Vår resa",
+      "founding": {
+        "title": "Företaget grundas",
+        "description": "Startade som ett familjeföretag i Föglö med fokus på traditionella fiskodlingsmetoder."
+      },
+      "expansion": {
+        "title": "Marknadsexpansion",
+        "description": "Utökade verksamheten och etablerade starka partnerskap med ledande finska livsmedelsproducenter."
+      },
+      "modernization": {
+        "title": "Anläggningsmodernisering",
+        "description": "Implementerade toppmodern odlingsteknologi samtidigt som vi behöll traditionella kvalitetsstandarder."
+      },
+      "sustainability": {
+        "title": "Hållbar framtid",
+        "description": "Uppnådde fullständig hållbarhetscertifiering och förbättrade våra miljöskyddsåtgärder."
+      }
+    },
+    "contact": {
+      "title": "Låt oss diskutera dina behov",
+      "description": "Vi berättar gärna mer om våra produkter och diskuterar potentiellt samarbete.",
+      "button": "Kontakta oss"
     }
   },
 

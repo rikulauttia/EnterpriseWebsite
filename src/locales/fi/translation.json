@@ -85,22 +85,52 @@
   },
 
   "about": {
-    "title": "Tietoa M.A.T-Fish:istä",
-    "subtitle": "Laadukkaita kalatuotteita vuodesta 1970",
-    "company": {
-      "history": "Yrityksen historia",
-      "mission": "Toiminta-ajatus",
-      "vision": "Visio",
-      "values": "Arvot"
+    "hero": {
+      "title": "Tietoa M.A.T Fish:stä",
+      "description": "Suomen saaristossa vuonna 1970 perustettu kalankasvatusyritys, joka on omistautunut laadulle ja kestävälle kehitykselle."
     },
-    "historyText": "M.A.T-Fish Ab Oy on toiminut Föglön alueella 1970-luvulta lähtien tarjoten asiakkailleen korkealaatuisia kalatuotteita.",
-    "missionText": "Tehtävämme on tarjota korkeimman laadun kalatuotteita ylläpitäen kestäviä kasvatusmenetelmiä.",
-    "visionText": "Olla Suomen johtava premium-kalatuotteiden toimittaja, tunnettu laadusta ja kestävyydestä.",
     "values": {
-      "quality": "Tinkimätön laatu",
-      "sustainability": "Ympäristövastuu",
-      "transparency": "Liiketoiminnan läpinäkyvyys",
-      "customer": "Asiakastyytyväisyys"
+      "title": "Arvomme",
+      "quality": {
+        "title": "Laatuosaaminen",
+        "description": "Ylläpidämme korkeimpia standardeja kaikessa toiminnassamme kasvatuksesta toimitukseen. Jokainen kala kasvatetaan huolella Suomen saariston puhtaissa vesissä."
+      },
+      "sustainability": {
+        "title": "Ympäristövastuu",
+        "description": "Kasvatusmenetelmämme on suunniteltu suojelemaan saariston ainutlaatuista ympäristöä. Uskomme kestävään kasvuun, joka kunnioittaa luonnon tasapainoa."
+      },
+      "responsibility": {
+        "title": "Sosiaalinen vastuu",
+        "description": "Olemme ylpeitä voidessamme tukea paikallisyhteisöämme ja ylläpitää vahvoja suhteita kumppaneihimme, työntekijöihimme ja asiakkaisiimme."
+      },
+      "community": {
+        "title": "Paikallinen perintö",
+        "description": "Suomen saaristoon syvästi juurtuneena säilytämme perinteistä tietotaitoa samalla kun omaksumme moderneja kestäviä käytäntöjä."
+      }
+    },
+    "milestones": {
+      "title": "Matkamme",
+      "founding": {
+        "title": "Yrityksen perustaminen",
+        "description": "Aloitti perheyrityksenä Föglössä keskittyen perinteisiin kalankasvatusmenetelmiin."
+      },
+      "expansion": {
+        "title": "Markkinoiden laajentuminen",
+        "description": "Laajensimme toimintaa ja loimme vahvat kumppanuudet johtavien suomalaisten elintarviketuottajien kanssa."
+      },
+      "modernization": {
+        "title": "Laitosten modernisointi",
+        "description": "Otimme käyttöön huippumodernit kasvatusteknologiat säilyttäen samalla perinteiset laatustandardit."
+      },
+      "sustainability": {
+        "title": "Kestävä tulevaisuus",
+        "description": "Saavutimme täydellisen kestävän kehityksen sertifioinnin ja tehostimme ympäristönsuojelutoimiamme."
+      }
+    },
+    "contact": {
+      "title": "Keskustellaan tarpeistanne",
+      "description": "Kerromme mielellämme lisää tuotteistamme ja keskustelemme mahdollisesta yhteistyöstä.",
+      "button": "Ota yhteyttä"
     }
   },
 

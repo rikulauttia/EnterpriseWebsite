@@ -85,22 +85,52 @@
   },
 
   "about": {
-    "title": "About M.A.T-Fish",
-    "subtitle": "Quality Fish Products Since 1970",
-    "company": {
-      "history": "Company History",
-      "mission": "Our Mission",
-      "vision": "Our Vision",
-      "values": "Our Values"
+    "hero": {
+      "title": "About M.A.T Fish",
+      "description": "A fish farming company from the Finnish archipelago, founded in 1970, dedicated to quality and sustainability."
     },
-    "historyText": "M.A.T-Fish Ab Oy has been operating in the Föglö region since the 1970s, providing premium quality fish products to our customers.",
-    "missionText": "Our mission is to provide the highest quality fish products while maintaining sustainable farming practices.",
-    "visionText": "To be the leading provider of premium fish products in Finland, known for quality and sustainability.",
     "values": {
-      "quality": "Uncompromising Quality",
-      "sustainability": "Environmental Responsibility",
-      "transparency": "Business Transparency",
-      "customer": "Customer Satisfaction"
+      "title": "Our Values",
+      "quality": {
+        "title": "Quality Excellence",
+        "description": "We maintain the highest standards throughout our operations, from farming to delivery. Every fish is raised with care in the clean waters of the Finnish archipelago."
+      },
+      "sustainability": {
+        "title": "Environmental Commitment",
+        "description": "Our farming practices are designed to protect the archipelago's unique environment. We believe in sustainable growth that respects nature's balance."
+      },
+      "responsibility": {
+        "title": "Social Responsibility",
+        "description": "We take pride in supporting our local community and maintaining strong relationships with our partners, employees, and customers."
+      },
+      "community": {
+        "title": "Local Heritage",
+        "description": "Deeply rooted in the Finnish archipelago, we preserve traditional knowledge while embracing modern sustainable practices."
+      }
+    },
+    "milestones": {
+      "title": "Our Journey",
+      "founding": {
+        "title": "Company Founded",
+        "description": "Started as a family business in Föglö, focusing on traditional fish farming methods."
+      },
+      "expansion": {
+        "title": "Market Expansion",
+        "description": "Extended operations and established strong partnerships with leading Finnish food producers."
+      },
+      "modernization": {
+        "title": "Facility Modernization",
+        "description": "Implemented state-of-the-art farming technologies while maintaining traditional quality standards."
+      },
+      "sustainability": {
+        "title": "Sustainable Future",
+        "description": "Achieved complete sustainability certification and enhanced our environmental protection measures."
+      }
+    },
+    "contact": {
+      "title": "Let's Discuss Your Needs",
+      "description": "We'd be happy to tell you more about our products and discuss potential collaboration.",
+      "button": "Contact Us"
     }
   },
 
