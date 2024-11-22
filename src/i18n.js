@@ -5,7 +5,6 @@ import { initReactI18next } from "react-i18next";
 // Import translation files directly
 import enTranslation from "./locales/en/translation.json";
 import fiTranslation from "./locales/fi/translation.json";
-import jaTranslation from "./locales/ja/translation.json";
 import svTranslation from "./locales/sv/translation.json";
 
 i18n
@@ -22,12 +21,9 @@ i18n
       sv: {
         translation: svTranslation,
       },
-      ja: {
-        translation: jaTranslation,
-      },
     },
     fallbackLng: "en",
-    supportedLngs: ["en", "fi", "sv", "ja"],
+    supportedLngs: ["en", "fi", "sv"],
     detection: {
       order: ["path", "navigator"],
       lookupFromPathIndex: 0,

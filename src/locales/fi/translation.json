@@ -134,30 +134,17 @@
     }
   },
 
-  "form": {
-    "name": "Nimi",
-    "email": "Sähköpostiosoite",
-    "subject": "Aihe",
-    "message": "Viesti",
-    "send": "Lähetä viesti",
-    "required": "Pakollinen kenttä",
-    "success": "Viesti lähetetty onnistuneesti",
-    "error": "Virhe viestin lähetyksessä"
-  },
-  "location": {
-    "title": "Sijaintimme",
-    "address": {
-      "street": "Tingsvägen 3",
-      "city": "Föglö",
-      "postal": "22710",
-      "country": "Suomi"
+  "contactpage": {
+    "title": "Ota yhteyttä",
+    "subtitle": "Keskustele premium-kalatarpeistasi asiantuntijatiimimme kanssa",
+    "roles": {
+      "ceo": "Toimitusjohtaja",
+      "sales": "Myyntiedustaja"
+    },
+    "location": {
+      "title": "Sijaintimme",
+      "subtitle": "Sijaitsee Suomen saariston sydämessä"
     }
-  },
-  "hours": {
-    "weekdays": "Maanantai - Perjantai",
-    "weekend": "Lauantai - Sunnuntai",
-    "time": "8:00 - 16:00",
-    "closed": "Suljettu"
   },
 
   "common": {

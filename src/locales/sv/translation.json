@@ -134,30 +134,17 @@
     }
   },
 
-  "form": {
-    "name": "Namn",
-    "email": "E-postadress",
-    "subject": "Ämne",
-    "message": "Meddelande",
-    "send": "Skicka meddelande",
-    "required": "Obligatoriskt fält",
-    "success": "Meddelandet har skickats",
-    "error": "Fel vid sändning av meddelande"
-  },
-  "location": {
-    "title": "Vår plats",
-    "address": {
-      "street": "Tingsvägen 3",
-      "city": "Föglö",
-      "postal": "22710",
-      "country": "Finland"
+  "contactpage": {
+    "title": "Kontakta oss",
+    "subtitle": "Anslut dig till vårt team av experter för att diskutera dina premiumfiskbehov",
+    "roles": {
+      "ceo": "Verkställande direktör",
+      "sales": "Försäljningsrepresentant"
+    },
+    "location": {
+      "title": "Vår plats",
+      "subtitle": "Beläget i hjärtat av den finska skärgården"
     }
-  },
-  "hours": {
-    "weekdays": "Måndag - Fredag",
-    "weekend": "Lördag - Söndag",
-    "time": "8:00 - 16:00",
-    "closed": "Stängt"
   },
 
   "common": {

@@ -8,6 +8,11 @@ import styled from "styled-components";
 
 import heroImage from "../images/hero/hero-background.jpg";
 
+const Section = styled.section`
+  padding: 5rem 0;
+  background: ${(props) => props.$bg || "white"};
+`;
+
 const HeroSection = styled.section`
   position: relative;
   height: 100vh;
@@ -191,31 +196,29 @@ const HomePage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4">
+      <Section $bg="linear-gradient(to bottom right, #003366, #004d99)">
+        <div className="container mx-auto px-4 max-w-6xl text-center">
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
               {t("home.contact.title")}
             </h2>
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               {t("home.contact.description")}
             </p>
             <Link
               to={`/${currentLang}/contact`}
-              className="inline-flex items-center px-8 py-4 rounded-lg bg-white text-blue-600 hover:bg-gray-100 transition-colors duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition-colors"
             >
               {t("home.contact.button")}
               <ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </motion.div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

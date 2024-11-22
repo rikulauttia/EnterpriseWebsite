@@ -134,30 +134,17 @@
     }
   },
 
-  "form": {
-    "name": "Name",
-    "email": "Email Address",
-    "subject": "Subject",
-    "message": "Message",
-    "send": "Send Message",
-    "required": "Required field",
-    "success": "Message sent successfully",
-    "error": "Error sending message"
-  },
-  "location": {
-    "title": "Our Location",
-    "address": {
-      "street": "Tingsvägen 3",
-      "city": "Föglö",
-      "postal": "22710",
-      "country": "Finland"
+  "contactpage": {
+    "title": "Get in Touch",
+    "subtitle": "Connect with our team of experts to discuss your premium fish needs",
+    "roles": {
+      "ceo": "Chief Executive Officer",
+      "sales": "Sales Representative"
+    },
+    "location": {
+      "title": "Our Location",
+      "subtitle": "Located in the heart of Finnish archipelago"
     }
-  },
-  "hours": {
-    "weekdays": "Monday - Friday",
-    "weekend": "Saturday - Sunday",
-    "time": "8:00 - 16:00",
-    "closed": "Closed"
   },
 
   "common": {

@@ -87,7 +87,7 @@ const ContactPage = () => {
   const contactPersons = [
     {
       name: "Anu Lauttia",
-      title: t("contact.roles.ceo", "Chief Executive Officer"),
+      title: t("contactpage.roles.ceo", "Chief Executive Officer"),
       contacts: {
         mobile: "040 8644 982",
         phone: "018-511 00",
@@ -96,7 +96,7 @@ const ContactPage = () => {
     },
     {
       name: "Kerli Vokksepp",
-      title: t("contact.roles.sales", "Sales Representative"),
+      title: t("contactpage.roles.sales", "Sales Representative"),
       contacts: {
         mobile: "040 1454 014",
         phone: "018-511 01",
@@ -122,7 +122,7 @@ const ContactPage = () => {
               </h1>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
                 {t(
-                  "contact.subtitle",
+                  "contactpage.subtitle",
                   "Connect with our team of experts to discuss your premium fish needs"
                 )}
               </p>
@@ -181,11 +181,11 @@ const ContactPage = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {t("contact.location.title", "Our Location")}
+              {t("contactpage.location.title", "Our Location")}
             </h2>
             <p className="text-xl text-gray-600 mb-8">
               {t(
-                "contact.location.subtitle",
+                "contactpage.location.subtitle",
                 "Located in the heart of Finnish archipelago"
               )}
             </p>

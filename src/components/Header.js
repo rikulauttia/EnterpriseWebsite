@@ -216,11 +216,6 @@ const Header = () => {
       name: "English",
       flag: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MCAzMCI+PGNsaXBQYXRoIGlkPSJhIj48cGF0aCBkPSJNMCAwdjMwaDYwVjB6Ii8+PC9jbGlwUGF0aD48cGF0aCBmaWxsPSIjMDAyNDdkIiBkPSJNMCAwdjMwaDYwVjB6Ii8+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjYiIGQ9Ik0wIDB2MzBtMC0xNWg2ME0wIDE1bDYwLTMwbTAtMTVMMCAzMCIgY2xpcC1wYXRoPSJ1cmwoI2EpIi8+PHBhdGggc3Ryb2tlPSIjY2YxNDJiIiBzdHJva2Utd2lkdGg9IjQiIGQ9Ik0wIDB2MzBtMC0xNWg2ME0wIDE1bDYwLTMwbTAtMTVMMCAzMCIgY2xpcC1wYXRoPSJ1cmwoI2EpIi8+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEwIiBkPSJNMzAgMHYzME0wIDE1aDYwIiBjbGlwLXBhdGg9InVybCgjYSkiLz48cGF0aCBzdHJva2U9IiNjZjE0MmIiIHN0cm9rZS13aWR0aD0iNiIgZD0iTTMwIDB2MzBNMCAxNWg2MCIgY2xpcC1wYXRoPSJ1cmwoI2EpIi8+PC9zdmc+",
     },
-    {
-      code: "ja",
-      name: "日本語",
-      flag: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMCAwaDkwMHY2MDBIMHoiLz48Y2lyY2xlIGZpbGw9IiNiYzAwMmQiIGN4PSI0NTAiIGN5PSIzMDAiIHI9IjE4MCIvPjwvc3ZnPg==",
-    },
   ];
 
   const navItems = [
@@ -232,7 +227,7 @@ const Header = () => {
 
   const getCurrentLanguage = () => {
     const path = location.pathname;
-    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    const langMatch = path.match(/^\/(en|fi|sv)/);
     return langMatch ? langMatch[1] : "fi";
   };
 
@@ -257,7 +252,7 @@ const Header = () => {
 
   const createLanguagePath = (langCode) => {
     const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, "");
+    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv)/, "");
     return `/${langCode}${pathWithoutLang || ""}`;
   };
 

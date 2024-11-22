@@ -6,6 +6,11 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
+const Section = styled.section`
+  padding: 5rem 0;
+  background: ${(props) => props.$bg || "white"};
+`;
+
 const StatsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -211,23 +216,29 @@ const ProductsPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <Section $bg="linear-gradient(to bottom right, #003366, #004d99)">
         <div className="container mx-auto px-4 max-w-6xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            {t("products.contact.title")}
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            {t("products.contact.description")}
-          </p>
-          <Link
-            to={`/${currentLang}/contact`}
-            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
           >
-            {t("products.contact.button")}
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              {t("products.contact.title")}
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              {t("products.contact.description")}
+            </p>
+            <Link
+              to={`/${currentLang}/contact`}
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              {t("products.contact.button")}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };
