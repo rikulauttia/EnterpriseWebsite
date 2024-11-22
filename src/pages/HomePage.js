@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import heroImage from "../images/hero/hero-background.jpg";
@@ -65,6 +65,16 @@ const FeatureCard = styled(motion.div)`
 
 const HomePage = () => {
   const { t } = useTranslation();
+  const location = useLocation();
+
+  // Get current language from URL
+  const getCurrentLanguage = () => {
+    const path = location.pathname;
+    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    return langMatch ? langMatch[1] : "fi";
+  };
+
+  const currentLang = getCurrentLanguage();
 
   const features = [
     {
@@ -170,7 +180,7 @@ const HomePage = () => {
               {t("home.about.description")}
             </p>
             <Link
-              to="/about"
+              to={`/${currentLang}/about`}
               className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
             >
               {t("home.about.link")}
@@ -197,7 +207,7 @@ const HomePage = () => {
               {t("home.contact.description")}
             </p>
             <Link
-              to="/contact"
+              to={`/${currentLang}/contact`}
               className="inline-flex items-center px-8 py-4 rounded-lg bg-white text-blue-600 hover:bg-gray-100 transition-colors duration-300"
             >
               {t("home.contact.button")}

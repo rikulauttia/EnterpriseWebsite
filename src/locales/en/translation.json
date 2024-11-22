@@ -50,41 +50,37 @@
 
   "products": {
     "title": "Our Products",
-    "subtitle": "Premium Quality Fish Products",
-    "categories": {
-      "rainbowTrout": {
-        "name": "Rainbow Trout",
-        "description": "Fresh farmed rainbow trout, carefully processed and delivered",
-        "details": "Our rainbow trout is farmed in the clean waters of the Finnish archipelago"
-      },
-      "whitefish": {
-        "name": "Whitefish",
-        "description": "Premium quality whitefish from sustainable sources",
-        "details": "Locally sourced whitefish, processed with care"
-      },
-      "char": {
-        "name": "Arctic Char",
-        "description": "Delicate and flavorful arctic char",
-        "details": "Farm-raised arctic char known for its rich taste"
-      },
-      "caviar": {
-        "name": "Caviar",
-        "description": "Premium rainbow trout roe",
-        "details": "Carefully processed red caviar available in late autumn and early winter"
-      }
+    "subtitle": "We produce high-quality fish from the pristine waters of Finnish archipelago, combining traditional knowledge with modern sustainable practices.",
+    "stats": {
+      "countries": "Export Countries",
+      "years": "Years Experience",
+      "sustainable": "Sustainable",
+      "production": "Annual Production"
     },
-    "features": {
-      "sustainable": "Sustainably Farmed",
-      "fresh": "Fresh Delivery",
-      "quality": "Premium Quality",
-      "local": "Locally Produced"
+    "rainbowTrout": {
+      "name": "Rainbow Trout",
+      "description": "Rainbow trout is one of Finland's most popular food fish, known for its versatility and nutritional value.",
+      "details": "Our rainbow trout is raised in carefully monitored conditions, reaching about 2.5 kg in size over two growing seasons. Rich in omega-3 fatty acids, vitamin D, and protein, it's perfect for both everyday meals and special occasions. Our fish are primarily bred from our own parent stock, ensuring consistent quality and health."
     },
-    "processing": {
-      "title": "Processing Services",
-      "gutting": "Fish Gutting",
-      "cleaning": "Fish Cleaning",
-      "filleting": "Filleting",
-      "packaging": "Vacuum Packaging"
+    "whitefish": {
+      "name": "Whitefish",
+      "description": "A highly valued Nordic food fish, known for its refined taste and versatility in cooking.",
+      "details": "Our whitefish is characterized by its lean, protein-rich white meat. Raised in controlled conditions to a market size of 1-1.5 kg, it's excellent for various preparations including smoking, grilling, or serving raw. We deliver it either fresh or frozen, always ensuring optimal quality."
+    },
+    "char": {
+      "name": "Arctic Char",
+      "description": "One of the northernmost salmonid species, offering a delicate flavor profile.",
+      "details": "Our Arctic char is raised in clean, cold waters that mirror their natural habitat. The flesh varies from pink to orange, with a refined, soft, and aromatic taste. Rich in omega-3 fatty acids and essential vitamins and minerals, it's perfect for smoking, frying, or grilling. We grow them to 1.5-2 kg before delivery."
+    },
+    "caviar": {
+      "name": "Rainbow Trout Roe",
+      "description": "A seasonal delicacy available from late autumn to early winter.",
+      "details": "Our rainbow trout roe is carefully harvested and processed during the season from November to January. Rich in omega-3 fatty acids and vitamin B12, it offers both excellent taste and nutritional value. Available fresh or frozen according to customer needs, with careful processing ensuring optimal flavor and texture."
+    },
+    "contact": {
+      "title": "Let's Discuss Your Needs",
+      "description": "We'd be happy to tell you more about our products and discuss how we could work together to meet your requirements.",
+      "button": "Contact Us"
     }
   },
 

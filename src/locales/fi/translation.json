@@ -50,41 +50,37 @@
 
   "products": {
     "title": "Tuotteemme",
-    "subtitle": "Korkealaatuiset kalatuotteet",
-    "categories": {
-      "rainbowTrout": {
-        "name": "Kirjolohi",
-        "description": "Tuore kasvatettu kirjolohi, huolellisesti käsitelty ja toimitettu",
-        "details": "Kirjolohemme kasvatetaan Suomen saariston puhtaissa vesissä"
-      },
-      "whitefish": {
-        "name": "Siika",
-        "description": "Ensiluokkaista siikaa kestävistä lähteistä",
-        "details": "Paikallisesti tuotettu siika, huolellisesti käsitelty"
-      },
-      "char": {
-        "name": "Nieriä",
-        "description": "Herkullinen ja maukas nieriä",
-        "details": "Kasvatettu nieriä tunnetaan rikkaasta maustaan"
-      },
-      "caviar": {
-        "name": "Kaviaari",
-        "description": "Korkealaatuinen kirjolohen mäti",
-        "details": "Huolellisesti valmistettu punainen kaviaari saatavilla myöhäissyksystä alkutalveen"
-      }
+    "subtitle": "Tuotamme korkealaatuista kalaa Suomen saariston puhtaista vesistä, yhdistäen perinteisen tietotaidon ja modernit kestävät käytännöt.",
+    "stats": {
+      "countries": "Vientimaat",
+      "years": "Vuotta Kokemusta",
+      "sustainable": "Vastuullinen",
+      "production": "Vuosituotanto"
     },
-    "features": {
-      "sustainable": "Kestävästi kasvatettu",
-      "fresh": "Tuore toimitus",
-      "quality": "Ensiluokkainen laatu",
-      "local": "Paikallisesti tuotettu"
+    "rainbowTrout": {
+      "name": "Kirjolohi",
+      "description": "Kirjolohi on yksi Suomen suosituimmista ruokakaloista, joka tunnetaan monipuolisuudestaan ja ravintorikkaudestaan.",
+      "details": "Kasvatamme kirjolohen tarkkaan valvotuissa olosuhteissa noin 2,5 kilon myyntikokoon kahden kasvukauden aikana. Se on runsas omega-3-rasvahappojen, D-vitamiinin ja proteiinin lähde, sopien sekä arkeen että juhlaan. Poikasemme ovat pääosin peräisin omista emokaloistamme, mikä varmistaa tasaisen laadun ja terveyden."
     },
-    "processing": {
-      "title": "Käsittelypalvelut",
-      "gutting": "Kalan perkaus",
-      "cleaning": "Kalan puhdistus",
-      "filleting": "Fileoiminen",
-      "packaging": "Tyhjiöpakkaus"
+    "whitefish": {
+      "name": "Siika",
+      "description": "Arvostettu pohjoismainen ruokakala, joka tunnetaan hienostuneesta maustaan ja monikäyttöisyydestään.",
+      "details": "Siikamme tunnistaa sen vähärasvaisesta, proteiinipitoisesta valkoisesta lihasta. Kasvatamme siiat 1-1,5 kilon myyntikokoon valvotuissa olosuhteissa. Se sopii erinomaisesti niin graavattavaksi, savustettavaksi kuin paistettavaksikin. Toimitamme siian joko tuoreena tai pakasteena."
+    },
+    "char": {
+      "name": "Nieriä",
+      "description": "Yksi maailman pohjoisimmista lohikalalajeista, tarjoten hienostuneen makuprofiilin.",
+      "details": "Kasvatamme nieriät puhtaissa ja kylmissä vesissä, jotka vastaavat niiden luonnollista elinympäristöä. Liha on väriltään vaaleanpunaisen ja oranssin väliltä, maultaan pehmeä ja aromaattinen. Runsaasti omega-3-rasvahappoja ja tärkeitä vitamiineja sisältävä nieriä kasvaa 1,5-2 kilon painoiseksi ennen toimitusta."
+    },
+    "caviar": {
+      "name": "Kirjolohen mäti",
+      "description": "Sesonkiherkku, jota on saatavilla myöhäissyksystä alkutalveen.",
+      "details": "Keräämme ja käsittelemme kirjolohen mädin huolellisesti marraskuusta tammikuuhun. Runsaasti omega-3-rasvahappoja ja B12-vitamiinia sisältävä mäti on sekä maukas että ravitseva. Toimitamme mädin asiakkaan tarpeiden mukaan tuoreena tai pakasteena, ja laadukas käsittelyprosessi varmistaa erinomaisen maun ja koostumuksen."
+    },
+    "contact": {
+      "title": "Keskustellaan tarpeistanne",
+      "description": "Kerromme mielellämme lisää tuotteistamme ja siitä, miten voisimme yhdessä vastata teidän tarpeisiinne.",
+      "button": "Ota yhteyttä"
     }
   },
 
