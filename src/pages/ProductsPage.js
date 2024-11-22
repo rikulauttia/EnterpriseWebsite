@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { motion } from "framer-motion";
 import { Activity, ArrowRight, Award, Globe, Shield } from "lucide-react";
@@ -9,6 +9,10 @@ import styled from "styled-components";
 const Section = styled.section`
   padding: 5rem 0;
   background: ${(props) => props.$bg || "white"};
+
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -16,10 +20,30 @@ const StatsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 `;
 
 const StatItem = styled.div`
   text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 `;
 
 const ProductCard = styled(motion.div)`
@@ -46,25 +70,31 @@ const ProductCard = styled(motion.div)`
     transition: width 0.3s ease, opacity 0.3s ease;
   }
 
-  &:hover {
-    background-color: #f8fafc;
-    transform: translateX(10px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  @media (hover: hover) {
+    &:hover {
+      background-color: #f8fafc;
+      transform: translateX(10px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-    &:before {
-      width: 4px;
-      opacity: 1;
+      &:before {
+        width: 4px;
+        opacity: 1;
+      }
     }
   }
 
-  /* Optional: Add responsive behavior */
   @media (max-width: 768px) {
-    padding: 2.5rem 1rem;
-    margin: 0 -1rem;
+    padding: 2rem 1rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
 
     &:hover {
-      transform: translateX(5px);
+      transform: translateX(0);
+      background-color: #f8fafc;
     }
   }
 `;
@@ -74,6 +104,10 @@ const ProductTitle = styled.h2`
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const ProductDescription = styled.p`
@@ -81,11 +115,26 @@ const ProductDescription = styled.p`
   line-height: 1.7;
   font-size: 1.1rem;
   max-width: 65ch;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
 `;
 
 const ProductsPage = () => {
   const { t } = useTranslation();
   const location = useLocation();
+
+  useEffect(() => {
+    // Enable smooth scrolling
+    document.documentElement.style.scrollBehavior = "smooth";
+
+    // Cleanup
+    return () => {
+      document.documentElement.style.scrollBehavior = "auto";
+    };
+  }, []);
 
   const getCurrentLanguage = () => {
     const path = location.pathname;
@@ -146,7 +195,7 @@ const ProductsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <motion.section
         className="pt-32 pb-20 bg-gradient-to-b from-gray-50"
@@ -154,7 +203,7 @@ const ProductsPage = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.h1
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -196,7 +245,7 @@ const ProductsPage = () => {
 
       {/* Products List */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {products.map((product, index) => (
             <ProductCard
               key={product.id}
@@ -217,7 +266,7 @@ const ProductsPage = () => {
 
       {/* Contact Section */}
       <Section $bg="linear-gradient(to bottom right, #003366, #004d99)">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
