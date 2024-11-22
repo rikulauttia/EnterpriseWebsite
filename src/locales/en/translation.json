@@ -16,28 +16,28 @@
 
   "home": {
     "hero": {
-      "subtitle": "Sustainable fish farming from the pristine waters of Finnish archipelago"
+      "subtitle": "Sustainable fish farming from the pristine waters of Finnish archipelago."
     },
     "features": {
       "quality": {
         "title": "Premium Quality",
-        "description": "Carefully selected premium fish from pristine Finnish archipelago waters"
+        "description": "Carefully selected premium fish from pristine Finnish archipelago waters."
       },
       "fresh": {
         "title": "Freshness Guaranteed",
-        "description": "Direct delivery from our local facilities ensuring optimal quality"
+        "description": "Direct delivery from our local facilities ensuring optimal quality."
       },
       "sustainable": {
         "title": "Sustainable Practice",
-        "description": "Committed to environmentally conscious and sustainable fishing methods"
+        "description": "Committed to environmentally conscious and sustainable fishing methods."
       },
       "local": {
         "title": "Local Excellence",
-        "description": "Supporting local communities and traditions in Finnish archipelago"
+        "description": "Supporting local communities and traditions in Finnish archipelago."
       }
     },
     "about": {
-      "title": "Our Commitment",
+      "title": "Our Commitment.",
       "description": "We are dedicated to sustainable fish farming in the Finnish archipelago. Our methods respect both tradition and innovation, ensuring the highest quality products while protecting our precious marine environment.",
       "link": "Learn more about us"
     },

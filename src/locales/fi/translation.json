@@ -16,28 +16,28 @@
 
   "home": {
     "hero": {
-      "subtitle": "Kestävää kalankasvatusta Suomen saariston puhtaista vesistä"
+      "subtitle": "Kestävää kalankasvatusta Suomen saariston puhtaista vesistä."
     },
     "features": {
       "quality": {
         "title": "Korkea Laatu",
-        "description": "Huolellisesti valittua premium-kalaa Suomen saariston puhtaista vesistä"
+        "description": "Huolellisesti valittua premium-kalaa Suomen saariston puhtaista vesistä."
       },
       "fresh": {
         "title": "Tuoreus Taattu",
-        "description": "Suora toimitus paikallisista laitoksistamme parhaan laadun varmistamiseksi"
+        "description": "Suora toimitus paikallisista laitoksistamme parhaan laadun varmistamiseksi."
       },
       "sustainable": {
         "title": "Kestävä Toiminta",
-        "description": "Sitoutuneet ympäristötietoisiin ja kestäviin kalastusmenetelmiin"
+        "description": "Sitoutuneet ympäristötietoisiin ja kestäviin kalastusmenetelmiin."
       },
       "local": {
         "title": "Paikallinen Osaaminen",
-        "description": "Tuemme paikallisia yhteisöjä ja perinteitä Suomen saaristossa"
+        "description": "Tuemme paikallisia yhteisöjä ja perinteitä Suomen saaristossa."
       }
     },
     "about": {
-      "title": "Sitoumuksemme",
+      "title": "Sitoumuksemme.",
       "description": "Olemme omistautuneet kestävään kalankasvatukseen Suomen saaristossa. Menetelmämme kunnioittavat sekä perinteitä että innovaatioita, varmistaen korkeimman laadun tuotteet ja suojellen arvokasta meriympäristöämme.",
       "link": "Lue lisää meistä"
     },

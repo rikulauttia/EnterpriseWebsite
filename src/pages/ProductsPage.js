@@ -130,7 +130,7 @@ const ProductsPage = () => {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      value: "50+",
+      value: "40+",
       label: t("products.stats.years"),
     },
     {

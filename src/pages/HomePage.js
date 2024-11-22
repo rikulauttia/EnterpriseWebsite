@@ -9,16 +9,19 @@ import styled from "styled-components";
 import heroImage from "../images/hero/hero-background.jpg";
 
 const Section = styled.section`
-  padding: 5rem 0;
-  background: ${(props) => props.$bg || "white"};
-`;
-
-const HeroSection = styled.section`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  height: 100vh;
-  min-height: 600px;
   overflow: hidden;
 
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 60px); /* Adjust for mobile header */
+  }
+`;
+
+const HeroSection = styled(Section)`
   &::after {
     content: "";
     position: absolute;
@@ -27,44 +30,89 @@ const HeroSection = styled.section`
     right: 0;
     bottom: 0;
     background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
+      180deg,
+      rgba(0, 0, 0, 0.2) 0%,
       rgba(0, 0, 0, 0.5) 100%
     );
+    pointer-events: none;
   }
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled(motion.img)`
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.1);
-  animation: zoomOut 20s ease-in-out infinite alternate;
-
-  @keyframes zoomOut {
-    from {
-      transform: scale(1.1);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
 `;
 
 const FeatureCard = styled(motion.div)`
+  background: rgba(255, 255, 255, 0.98);
+  padding: 3.5rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 51, 102, 0.02),
+    0 12px 16px rgba(0, 51, 102, 0.04), 0 0 1px rgba(0, 51, 102, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 2rem 0;
-  border-left: 2px solid #e5e7eb;
-  padding-left: 2rem;
-  transition: border-color 0.3s ease;
+  border: 1px solid rgba(229, 231, 235, 0.7);
+  backdrop-filter: blur(20px);
+  transform: translateY(0);
+  will-change: transform;
 
-  &:hover {
-    border-color: #2563eb;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.2),
+      rgba(37, 99, 235, 0.05) 50%,
+      transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 51, 102, 0.03),
+        0 16px 24px rgba(0, 51, 102, 0.05), 0 0 1px rgba(0, 51, 102, 0.1);
+    }
   }
 
   @media (max-width: 768px) {
-    padding: 1.5rem 0 1.5rem 1.5rem;
+    padding: 2.5rem 2rem;
+  }
+`;
+
+const StyledButton = styled(Link)`
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: ${(props) =>
+    props.$primary ? "rgba(255, 255, 255, 0.9)" : "#2563eb"};
+  color: ${(props) => (props.$primary ? "#1a365d" : "white")};
+  backdrop-filter: ${(props) => (props.$primary ? "blur(10px)" : "none")};
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-2px);
+      background: ${(props) =>
+        props.$primary ? "rgba(255, 255, 255, 1)" : "#1d4ed8"};
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 `;
 
@@ -72,7 +120,6 @@ const HomePage = () => {
   const { t } = useTranslation();
   const location = useLocation();
 
-  // Get current language from URL
   const getCurrentLanguage = () => {
     const path = location.pathname;
     const langMatch = path.match(/^\/(en|fi|sv|ja)/);
@@ -112,112 +159,227 @@ const HomePage = () => {
     },
   ];
 
+  // Section animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="snap-y snap-mandatory h-screen overflow-y-scroll overflow-x-hidden">
       {/* Hero Section */}
-      <HeroSection>
-        <HeroImage src={heroImage} alt="Finnish archipelago" loading="eager" />
+      <HeroSection className="snap-start">
+        <HeroImage
+          src={heroImage}
+          alt="Finnish archipelago"
+          loading="eager"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10, ease: "easeOut" }}
+        />
         <motion.div
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
         >
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center mb-6 tracking-wider"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight"
+            variants={itemVariants}
           >
             M.A.T FISH
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-white text-center max-w-3xl mx-auto font-light"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-xl md:text-2xl lg:text-3xl text-white mb-12 font-light"
+            variants={itemVariants}
           >
             {t("home.hero.subtitle")}
           </motion.p>
+          <motion.div className="space-x-4" variants={itemVariants}>
+            <StyledButton
+              to={`/${currentLang}/contact`}
+              $primary
+              className="text-lg md:text-xl"
+            >
+              {t("home.hero.contact", "Contact Us")}
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </StyledButton>
+          </motion.div>
         </motion.div>
       </HeroSection>
 
       {/* Features Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <Section className="snap-start relative overflow-hidden flex items-center min-h-screen bg-gradient-to-b from-white via-blue-50/30 to-white">
+        {/* Subtle premium background */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60' stroke='%23000' stroke-width='0.5'/%3E%3C/svg%3E")`,
+              opacity: 0.1,
+            }}
+          />
+        </div>
+
+        {/* Main Content */}
+        <motion.div
+          className="container relative mx-auto px-4 sm:px-6 lg:px-8 py-12"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          {/* Features Grid */}
+          <div className="max-w-6xl mx-auto -mt-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {features.map((feature, index) => (
                 <FeatureCard
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  variants={itemVariants}
+                  className="flex flex-col items-center text-center group"
                 >
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {/* Premium icon container */}
+                  <div className="relative w-16 h-16 mb-8">
+                    <motion.div
+                      className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-600/10 to-blue-400/10"
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.5, 0.2, 0.5],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/40 to-blue-50/40 backdrop-blur-sm flex items-center justify-center">
+                      <div className="w-8 h-8 text-blue-600">
+                        {index === 0 && (
+                          <svg
+                            className="w-8 h-8"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                          </svg>
+                        )}
+                        {index === 1 && (
+                          <svg
+                            className="w-8 h-8"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                            <path d="M12 6v6l4 2" />
+                          </svg>
+                        )}
+                        {index === 2 && (
+                          <svg
+                            className="w-8 h-8"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z" />
+                            <line x1="16" y1="8" x2="2" y2="22" />
+                            <line x1="17.5" y1="15" x2="9" y2="15" />
+                          </svg>
+                        )}
+                        {index === 3 && (
+                          <svg
+                            className="w-8 h-8"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                          >
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+
+                  <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-600 to-transparent mb-6 opacity-70" />
+
+                  <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
                     {feature.description}
                   </p>
+
+                  {/* Enhanced glass effect border */}
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl opacity-0"
+                    whileHover={{ opacity: 0.1 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      background:
+                        "linear-gradient(45deg, transparent, rgba(37, 99, 235, 0.1), transparent)",
+                    }}
+                  />
                 </FeatureCard>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </Section>
 
       {/* About Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-3xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
-              {t("home.about.title")}
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+      <Section className="snap-start bg-white">
+        <motion.div
+          className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.h2
+              className="text-3xl md:text-5xl font-bold mb-6 text-gray-900"
+              variants={itemVariants}
+            >
+              {t("home.about.title", "Our Commitment")}
+            </motion.h2>
+            <motion.p
+              className="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed"
+              variants={itemVariants}
+            >
               {t("home.about.description")}
-            </p>
-            <Link
-              to={`/${currentLang}/about`}
-              className="inline-flex items-center px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
-            >
-              {t("home.about.link")}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <Section $bg="linear-gradient(to bottom right, #003366, #004d99)">
-        <div className="container mx-auto px-4 max-w-6xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              {t("home.contact.title")}
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              {t("home.contact.description")}
-            </p>
-            <Link
-              to={`/${currentLang}/contact`}
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition-colors"
-            >
-              {t("home.contact.button")}
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-          </motion.div>
-        </div>
+            </motion.p>
+            <motion.div variants={itemVariants}>
+              <StyledButton
+                to={`/${currentLang}/about`}
+                className="text-lg md:text-xl"
+              >
+                {t("home.about.link", "Learn more about us")}
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </StyledButton>
+            </motion.div>
+          </div>
+        </motion.div>
       </Section>
     </div>
   );
