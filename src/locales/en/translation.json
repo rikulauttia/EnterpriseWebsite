@@ -16,7 +16,7 @@
 
   "meta": {
     "title": "M.A.T-Fish | Premium Fish Products & Processing.",
-    "description": "Premium quality farmed rainbow trout, whitefish, and char. Fresh fish delivery across Finland. Specializing in fish processing and premium caviar production."
+    "description": "Premium quality farmed rainbow trout, whitefish, and char. Fresh fish delivery across Finland."
   },
 
   "home": {
@@ -27,11 +27,11 @@
     "features": {
       "quality": {
         "title": "Premium Quality",
-        "description": "Carefully selected premium fish from pristine Finnish archipelago waters."
+        "description": "Carefully selected premium fish from the clean waters of the Åland Archipelago."
       },
       "fresh": {
         "title": "Freshness Guaranteed",
-        "description": "Direct delivery from our local facilities ensuring optimal quality."
+        "description": "Direct delivery from our local facility to ensure the best quality."
       },
       "sustainable": {
         "title": "Sustainable Practice",
@@ -39,12 +39,12 @@
       },
       "local": {
         "title": "Local Excellence",
-        "description": "Supporting local communities and traditions in Finnish archipelago."
+        "description": "We support local communities and traditions in the Åland Archipelago."
       }
     },
     "about": {
       "title": "Our Commitment.",
-      "description": "We are dedicated to sustainable fish farming in the Finnish archipelago. Our methods respect both tradition and innovation, ensuring the highest quality products while protecting our precious marine environment.",
+      "description": "We are dedicated to sustainable fish farming in the Åland Archipelago. Our methods honor both tradition and innovation, ensuring the highest quality products while protecting our valuable marine environment.",
       "link": "Learn more about us"
     },
     "contact": {
@@ -56,7 +56,7 @@
 
   "products": {
     "title": "Our Products",
-    "subtitle": "We produce high-quality fish from the pristine waters of Finnish archipelago, combining traditional knowledge with modern sustainable practices.",
+    "subtitle": "We produce high-quality fish from the pure waters of the Åland Archipelago, combining traditional expertise with modern sustainable practices.",
     "stats": {
       "countries": "Export Countries",
       "years": "Years Experience",
@@ -66,22 +66,22 @@
     "rainbowTrout": {
       "name": "Rainbow Trout",
       "description": "Rainbow trout is one of Finland's most popular food fish, known for its versatility and nutritional value.",
-      "details": "Our rainbow trout is raised in carefully monitored conditions, reaching about 2.5 kg in size over two growing seasons. Rich in omega-3 fatty acids, vitamin D, and protein, it's perfect for both everyday meals and special occasions. Our fish are primarily bred from our own parent stock, ensuring consistent quality and health."
+      "details": "We grow rainbow trout under carefully monitored conditions to a sales size of approximately 2.5 kilograms over two growing seasons. It is a rich source of omega-3 fatty acids, vitamin D, and protein, making it suitable for both everyday meals and special occasions."
     },
     "whitefish": {
       "name": "Whitefish",
       "description": "A highly valued Nordic food fish, known for its refined taste and versatility in cooking.",
-      "details": "Our whitefish is characterized by its lean, protein-rich white meat. Raised in controlled conditions to a market size of 1-1.5 kg, it's excellent for various preparations including smoking, grilling, or serving raw. We deliver it either fresh or frozen, always ensuring optimal quality."
+      "details": "Our whitefish is characterized by its low-fat, high-protein white flesh. We raise whitefish to a sales size of 0.4-1 kilograms under controlled conditions. It is perfect for curing, smoking, or frying. We deliver whitefish fresh."
     },
     "char": {
       "name": "Arctic Char",
       "description": "One of the northernmost salmonid species, offering a delicate flavor profile.",
-      "details": "Our Arctic char is raised in clean, cold waters that mirror their natural habitat. The flesh varies from pink to orange, with a refined, soft, and aromatic taste. Rich in omega-3 fatty acids and essential vitamins and minerals, it's perfect for smoking, frying, or grilling. We grow them to 1.5-2 kg before delivery."
+      "details": "We raise Arctic char in pure and cold waters that mimic their natural habitat. The flesh varies between pink and orange in color, with a soft and aromatic flavor. Rich in omega-3 fatty acids and essential vitamins, Arctic char grows to 1.5-2 kilograms before delivery."
     },
     "caviar": {
       "name": "Rainbow Trout Roe",
       "description": "A seasonal delicacy available from late autumn to early winter.",
-      "details": "Our rainbow trout roe is carefully harvested and processed during the season from November to January. Rich in omega-3 fatty acids and vitamin B12, it offers both excellent taste and nutritional value. Available fresh or frozen according to customer needs, with careful processing ensuring optimal flavor and texture."
+      "details": "Rich in omega-3 fatty acids and vitamin B12, the roe is both delicious and nutritious. We deliver roe sacks to our clients for further processing, ensuring freshness and the highest quality for the commercial sector."
     },
     "contact": {
       "title": "Let's Discuss Your Needs",
@@ -92,14 +92,14 @@
 
   "about": {
     "hero": {
-      "title": "About M.A.T Fish",
-      "description": "A fish farming company from the Finnish archipelago, founded in 1970, dedicated to quality and sustainability."
+      "title": "About M.A.T-Fish",
+      "description": "A fish farming company from the Åland Archipelago, founded in 2010, dedicated to quality and sustainability."
     },
     "values": {
       "title": "Our Values",
       "quality": {
         "title": "Quality Excellence",
-        "description": "We maintain the highest standards throughout our operations, from farming to delivery. Every fish is raised with care in the clean waters of the Finnish archipelago."
+        "description": "We maintain the highest standards throughout our operations, from farming to delivery. Every fish is raised with care in the clean waters of the Åland Archipelago."
       },
       "sustainability": {
         "title": "Environmental Commitment",
@@ -111,14 +111,14 @@
       },
       "community": {
         "title": "Local Heritage",
-        "description": "Deeply rooted in the Finnish archipelago, we preserve traditional knowledge while embracing modern sustainable practices."
+        "description": "Deeply rooted in the Åland Archipelago, we preserve traditional knowledge while embracing modern sustainable practices."
       }
     },
     "milestones": {
       "title": "Our Journey",
       "founding": {
-        "title": "Company Founded",
-        "description": "Started as a family business in Föglö, focusing on traditional fish farming methods."
+        "title": "Company Founding",
+        "description": "We began our operations in the village of Flisö in Föglö, focusing on traditional fish farming methods."
       },
       "expansion": {
         "title": "Market Expansion",
@@ -126,11 +126,11 @@
       },
       "modernization": {
         "title": "Facility Modernization",
-        "description": "Implemented state-of-the-art farming technologies while maintaining traditional quality standards."
+        "description": "We adopted modern farming technologies while maintaining traditional quality standards."
       },
       "sustainability": {
         "title": "Sustainable Future",
-        "description": "Achieved complete sustainability certification and enhanced our environmental protection measures."
+        "description": "We began to focus more on a sustainable future and enhanced our environmental protection efforts."
       }
     },
     "contact": {
@@ -149,7 +149,7 @@
     },
     "location": {
       "title": "Our Location",
-      "subtitle": "We are located in the heart of the Finnish archipelago."
+      "subtitle": "We operate in the heart of the Åland Archipelago, in the village of Flisö in the municipality of Föglö."
     }
   },
 

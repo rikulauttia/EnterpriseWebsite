@@ -7,7 +7,7 @@
 
   "meta": {
     "title": "M.A.T-Fish | Korkealaatuiset kalatuotteet ja -jalostus.",
-    "description": "Korkealaatuista kasvatettua kirjolohta, siikaa ja nieriää. Tuoreen kalan toimitus ympäri Suomen. Erikoistunut kalan jalostukseen ja premium kaviaarin tuotantoon."
+    "description": "Korkealaatuista kasvatettua kirjolohta, siikaa ja nieriää. Tuoreen kalan toimitus ympäri Suomen."
   },
 
   "navigation": {
@@ -27,11 +27,11 @@
     "features": {
       "quality": {
         "title": "Korkea Laatu",
-        "description": "Huolellisesti valittua premium-kalaa Suomen saariston puhtaista vesistä."
+        "description": "Huolellisesti valittua premium-kalaa Ahvenanmaan saariston puhtaista vesistä."
       },
       "fresh": {
         "title": "Tuoreus Taattu",
-        "description": "Suora toimitus paikallisista laitoksistamme parhaan laadun varmistamiseksi."
+        "description": "Suora toimitus paikallisesta laitoksestamme parhaan laadun varmistamiseksi."
       },
       "sustainable": {
         "title": "Kestävä Toiminta",
@@ -39,12 +39,12 @@
       },
       "local": {
         "title": "Paikallinen Osaaminen",
-        "description": "Tuemme paikallisia yhteisöjä ja perinteitä Suomen saaristossa."
+        "description": "Tuemme paikallisia yhteisöjä ja perinteitä Ahvenanmaan saaristossa."
       }
     },
     "about": {
       "title": "Sitoumuksemme.",
-      "description": "Olemme omistautuneet kestävään kalankasvatukseen Suomen saaristossa. Menetelmämme kunnioittavat sekä perinteitä että innovaatioita, varmistaen korkeimman laadun tuotteet ja suojellen arvokasta meriympäristöämme.",
+      "description": "Olemme omistautuneet kestävään kalankasvatukseen Ahvenanmaan saaristossa. Menetelmämme kunnioittavat sekä perinteitä että innovaatioita, varmistaen korkeimman laadun tuotteet ja suojellen arvokasta meriympäristöämme.",
       "link": "Lue lisää meistä"
     },
     "contact": {
@@ -56,7 +56,7 @@
 
   "products": {
     "title": "Tuotteemme",
-    "subtitle": "Tuotamme korkealaatuista kalaa Suomen saariston puhtaista vesistä, yhdistäen perinteisen tietotaidon ja modernit kestävät käytännöt.",
+    "subtitle": "Tuotamme korkealaatuista kalaa Ahvenanmaan saariston puhtaista vesistä, yhdistäen perinteisen tietotaidon ja modernit kestävät käytännöt.",
     "stats": {
       "countries": "Vientimaat",
       "years": "Vuotta Kokemusta",
@@ -66,12 +66,12 @@
     "rainbowTrout": {
       "name": "Kirjolohi",
       "description": "Kirjolohi on yksi Suomen suosituimmista ruokakaloista, joka tunnetaan monipuolisuudestaan ja ravintorikkaudestaan.",
-      "details": "Kasvatamme kirjolohen tarkkaan valvotuissa olosuhteissa noin 2,5 kilon myyntikokoon kahden kasvukauden aikana. Se on runsas omega-3-rasvahappojen, D-vitamiinin ja proteiinin lähde, sopien sekä arkeen että juhlaan. Poikasemme ovat pääosin peräisin omista emokaloistamme, mikä varmistaa tasaisen laadun ja terveyden."
+      "details": "Kasvatamme kirjolohen tarkkaan valvotuissa olosuhteissa noin 2,5 kilon myyntikokoon kahden kasvukauden aikana. Se on runsas omega-3-rasvahappojen, D-vitamiinin ja proteiinin lähde, sopien sekä arkeen että juhlaan."
     },
     "whitefish": {
       "name": "Siika",
       "description": "Arvostettu pohjoismainen ruokakala, joka tunnetaan hienostuneesta maustaan ja monikäyttöisyydestään.",
-      "details": "Siikamme tunnistaa sen vähärasvaisesta, proteiinipitoisesta valkoisesta lihasta. Kasvatamme siiat 1-1,5 kilon myyntikokoon valvotuissa olosuhteissa. Se sopii erinomaisesti niin graavattavaksi, savustettavaksi kuin paistettavaksikin. Toimitamme siian joko tuoreena tai pakasteena."
+      "details": "Siikamme tunnistaa sen vähärasvaisesta, proteiinipitoisesta valkoisesta lihasta. Kasvatamme siiat 0,4-1 kilon myyntikokoon valvotuissa olosuhteissa. Se sopii erinomaisesti niin graavattavaksi, savustettavaksi kuin paistettavaksikin. Toimitamme siian tuoreena."
     },
     "char": {
       "name": "Nieriä",
@@ -81,7 +81,7 @@
     "caviar": {
       "name": "Kirjolohen mäti",
       "description": "Sesonkiherkku, jota on saatavilla myöhäissyksystä alkutalveen.",
-      "details": "Keräämme ja käsittelemme kirjolohen mädin huolellisesti marraskuusta tammikuuhun. Runsaasti omega-3-rasvahappoja ja B12-vitamiinia sisältävä mäti on sekä maukas että ravitseva. Toimitamme mädin asiakkaan tarpeiden mukaan tuoreena tai pakasteena, ja laadukas käsittelyprosessi varmistaa erinomaisen maun ja koostumuksen."
+      "details": "Runsaasti omega-3-rasvahappoja ja B12-vitamiinia sisältävä mäti on sekä maukas että ravitseva. Toimitamme mätipussit asiakkaillemme jatkojalostusta varten varmistaen tuoreuden ja korkeimman laadun kaupalliselle sektorille."
     },
     "contact": {
       "title": "Keskustellaan tarpeistanne",
@@ -92,14 +92,14 @@
 
   "about": {
     "hero": {
-      "title": "Tietoa M.A.T Fish:stä",
-      "description": "Suomen saaristossa vuonna 1970 perustettu kalankasvatusyritys, joka on omistautunut laadulle ja kestävälle kehitykselle."
+      "title": "Tietoa M.A.T-Fish:stä",
+      "description": "Ahvenanmaan saaristossa vuonna 2010 perustettu kalankasvatusyritys, joka on omistautunut laadulle ja kestävälle kehitykselle."
     },
     "values": {
       "title": "Arvomme",
       "quality": {
         "title": "Laatuosaaminen",
-        "description": "Ylläpidämme korkeimpia standardeja kaikessa toiminnassamme kasvatuksesta toimitukseen. Jokainen kala kasvatetaan huolella Suomen saariston puhtaissa vesissä."
+        "description": "Ylläpidämme korkeimpia standardeja kaikessa toiminnassamme kasvatuksesta toimitukseen. Jokainen kala kasvatetaan huolella Ahvenanmaan saariston puhtaissa vesissä."
       },
       "sustainability": {
         "title": "Ympäristövastuu",
@@ -111,14 +111,14 @@
       },
       "community": {
         "title": "Paikallinen perintö",
-        "description": "Suomen saaristoon syvästi juurtuneena säilytämme perinteistä tietotaitoa samalla kun omaksumme moderneja kestäviä käytäntöjä."
+        "description": "Ahvenanmaan saaristoon syvästi juurtuneena säilytämme perinteistä tietotaitoa samalla kun omaksumme moderneja kestäviä käytäntöjä."
       }
     },
     "milestones": {
       "title": "Matkamme",
       "founding": {
         "title": "Yrityksen perustaminen",
-        "description": "Aloitti perheyrityksenä Föglössä keskittyen perinteisiin kalankasvatusmenetelmiin."
+        "description": "Aloitimme toimintamme Flisön kylässä Föglössä keskittyen perinteisiin kalankasvatusmenetelmiin."
       },
       "expansion": {
         "title": "Markkinoiden laajentuminen",
@@ -126,11 +126,11 @@
       },
       "modernization": {
         "title": "Laitosten modernisointi",
-        "description": "Otimme käyttöön huippumodernit kasvatusteknologiat säilyttäen samalla perinteiset laatustandardit."
+        "description": "Otimme käyttöön modernit kasvatusteknologiat säilyttäen samalla perinteiset laatustandardit."
       },
       "sustainability": {
         "title": "Kestävä tulevaisuus",
-        "description": "Saavutimme täydellisen kestävän kehityksen sertifioinnin ja tehostimme ympäristönsuojelutoimiamme."
+        "description": "Aloimme panostaa entistä enemmän kestävään tulevaisuuteen ja tehostimme ympäristönsuojelutoimiamme."
       }
     },
     "contact": {
@@ -149,7 +149,7 @@
     },
     "location": {
       "title": "Sijaintimme",
-      "subtitle": "Sijaitsemme Suomen saariston sydämessä."
+      "subtitle": "Toimimme Ahvenanmaan saariston sydämessä, Föglön kunnassa Flisön kylässä."
     }
   },
 

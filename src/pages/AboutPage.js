@@ -188,12 +188,12 @@ const AboutPage = () => {
       description: t("about.milestones.expansion.description"),
     },
     {
-      year: "2014",
+      year: "2022",
       title: t("about.milestones.modernization.title"),
       description: t("about.milestones.modernization.description"),
     },
     {
-      year: "2018",
+      year: "2023",
       title: t("about.milestones.sustainability.title"),
       description: t("about.milestones.sustainability.description"),
     },

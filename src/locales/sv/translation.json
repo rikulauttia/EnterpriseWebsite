@@ -7,7 +7,7 @@
 
   "meta": {
     "title": "M.A.T-Fish | Premium fiskprodukter och förädling.",
-    "description": "Premium kvalitet odlad regnbågslax, sik och röding. Färsk fiskleverans över hela Finland. Specialiserad på fiskförädling och premium kaviarproduktion."
+    "description": "Premium kvalitet odlad regnbågslax, sik och röding. Färsk fiskleverans över hela Finland."
   },
 
   "navigation": {
@@ -27,11 +27,11 @@
     "features": {
       "quality": {
         "title": "Premium Kvalitet",
-        "description": "Noggrant utvald premiumfisk från den finska skärgårdens rena vatten."
+        "description": "Noga utvald premiumfisk från Ålands skärgårds rena vatten."
       },
       "fresh": {
         "title": "Garanterad Färskhet",
-        "description": "Direktleverans från våra lokala anläggningar för optimal kvalitet."
+        "description": "Direktleverans från vår lokala anläggning för att säkerställa bästa kvalitet."
       },
       "sustainable": {
         "title": "Hållbar Verksamhet",
@@ -39,12 +39,12 @@
       },
       "local": {
         "title": "Lokal Excellence",
-        "description": "Stödjer lokala samhällen och traditioner i den finska skärgården."
+        "description": "Vi stödjer lokala samhällen och traditioner i Ålands skärgård."
       }
     },
     "about": {
       "title": "Vårt Åtagande.",
-      "description": "Vi är dedikerade till hållbar fiskodling i den finska skärgården. Våra metoder respekterar både tradition och innovation, vilket säkerställer produkter av högsta kvalitet samtidigt som vi skyddar vår värdefulla havsmiljö.",
+      "description": "Vi är dedikerade till hållbar fiskodling i Ålands skärgård. Våra metoder hedrar både tradition och innovation, vilket garanterar produkter av högsta kvalitet och skyddar vår värdefulla marina miljö.",
       "link": "Läs mer om oss"
     },
     "contact": {
@@ -56,7 +56,7 @@
 
   "products": {
     "title": "Våra Produkter",
-    "subtitle": "Vi producerar högkvalitativ fisk från den finska skärgårdens rena vatten, och kombinerar traditionell kunskap med moderna hållbara metoder.",
+    "subtitle": "Vi producerar högkvalitativ fisk från Ålands skärgårds rena vatten, där vi kombinerar traditionell expertis med moderna hållbara metoder.",
     "stats": {
       "countries": "Exportländer",
       "years": "Års Erfarenhet",
@@ -66,22 +66,22 @@
     "rainbowTrout": {
       "name": "Regnbåge",
       "description": "Regnbåge är en av Finlands mest populära matfiskar, känd för sin mångsidighet och sitt näringsvärde.",
-      "details": "Vår regnbåge odlas under noggrant övervakade förhållanden till cirka 2,5 kg under två växtsäsonger. Rik på omega-3-fettsyror, D-vitamin och protein, passar den perfekt för både vardags- och festmåltider. Våra yngel kommer huvudsakligen från vårt eget moderbestånd, vilket säkerställer konsekvent kvalitet och hälsa."
+      "details": "Vi odlar regnbågslax under noggrant övervakade förhållanden till en försäljningsstorlek på cirka 2,5 kilo under två odlingssäsonger. Den är en rik källa till omega-3-fettsyror, vitamin D och protein, vilket gör den lämplig för både vardagsmat och festmåltider."
     },
     "whitefish": {
       "name": "Sik",
       "description": "En högt värderad nordisk matfisk, känd för sin förfinade smak och mångsidighet i matlagningen.",
-      "details": "Vår sik kännetecknas av sitt magra, proteinrika vita kött. Den odlas till en marknadsstorlek på 1-1,5 kg under kontrollerade förhållanden. Utmärkt för olika tillagningsmetoder som gravning, rökning eller stekning. Vi levererar antingen färsk eller fryst fisk."
+      "details": "Vår sik kännetecknas av sitt magra, proteinrika vita kött. Vi odlar sik till en försäljningsstorlek på 0,4-1 kilo under kontrollerade förhållanden. Den passar utmärkt för gravning, rökning eller stekning. Vi levererar siken färsk."
     },
     "char": {
       "name": "Röding",
       "description": "En av världens nordligaste laxfiskarter, med en delikat smakprofil.",
-      "details": "Vår röding odlas i rent, kallt vatten som speglar deras naturliga livsmiljö. Köttet varierar från rosa till orange, med en förfinad, mjuk och aromatisk smak. Rik på omega-3-fettsyror och viktiga vitaminer, perfekt för rökning, stekning eller grillning. Vi odlar dem till 1,5-2 kg före leverans."
+      "details": "Vi odlar röding i rena och kalla vatten som efterliknar deras naturliga livsmiljö. Köttet är rosa till orange i färgen, med en mjuk och aromatisk smak. Rik på omega-3-fettsyror och viktiga vitaminer växer röding till 1,5-2 kilo innan leverans."
     },
     "caviar": {
       "name": "Regnbågsrom",
       "description": "En säsongsdelikatess tillgänglig från sen höst till tidig vinter.",
-      "details": "Vår regnbågsrom skördas och bearbetas noggrant under säsongen från november till januari. Rik på omega-3-fettsyror och vitamin B12, erbjuder den både utmärkt smak och näringsvärde. Tillgänglig färsk eller fryst enligt kundens behov, med noggrann bearbetning som säkerställer optimal smak och konsistens."
+      "details": "Rik på omega-3-fettsyror och vitamin B12 är rommen både välsmakande och näringsrik. Vi levererar romsäckar till våra kunder för vidare förädling, och säkerställer färskhet och högsta kvalitet för den kommersiella sektorn."
     },
     "contact": {
       "title": "Låt oss diskutera dina behov",
@@ -92,14 +92,14 @@
 
   "about": {
     "hero": {
-      "title": "Om M.A.T Fish",
-      "description": "Ett fiskodlingsföretag från den finska skärgården, grundat 1970, dedikerat till kvalitet och hållbarhet."
+      "title": "Om M.A.T-Fish",
+      "description": "Ett fiskodlingsföretag från Ålands skärgård, grundat år 2010, dedikerat till kvalitet och hållbar utveckling."
     },
     "values": {
       "title": "Våra värderingar",
       "quality": {
         "title": "Kvalitetsexcellens",
-        "description": "Vi upprätthåller högsta standard genom hela vår verksamhet, från odling till leverans. Varje fisk odlas med omsorg i den finska skärgårdens rena vatten."
+        "description": "Vi upprätthåller högsta standard genom hela vår verksamhet, från odling till leverans. Varje fisk odlas med omsorg i Ålands skärgårds rena vatten."
       },
       "sustainability": {
         "title": "Miljöengagemang",
@@ -111,26 +111,26 @@
       },
       "community": {
         "title": "Lokalt arv",
-        "description": "Djupt rotade i den finska skärgården bevarar vi traditionell kunskap samtidigt som vi anammar moderna hållbara metoder."
+        "description": "Djupt rotade i Ålands skärgård bevarar vi traditionell kunskap samtidigt som vi anammar moderna, hållbara metoder."
       }
     },
     "milestones": {
       "title": "Vår resa",
       "founding": {
-        "title": "Företaget grundas",
-        "description": "Startade som ett familjeföretag i Föglö med fokus på traditionella fiskodlingsmetoder."
+        "title": "Företagets Grundande",
+        "description": "Vi började vår verksamhet i byn Flisö i Föglö med fokus på traditionella fiskodlingsmetoder."
       },
       "expansion": {
         "title": "Marknadsexpansion",
-        "description": "Utökade verksamheten och etablerade starka partnerskap med ledande finska livsmedelsproducenter."
+        "description": "Vi utökade vår verksamhet och skapade starka partnerskap med ledande finska livsmedelsproducenter."
       },
       "modernization": {
         "title": "Anläggningsmodernisering",
-        "description": "Implementerade toppmodern odlingsteknologi samtidigt som vi behöll traditionella kvalitetsstandarder."
+        "description": "Vi implementerade moderna odlingsteknologier samtidigt som vi bevarade traditionella kvalitetsstandarder."
       },
       "sustainability": {
-        "title": "Hållbar framtid",
-        "description": "Uppnådde fullständig hållbarhetscertifiering och förbättrade våra miljöskyddsåtgärder."
+        "title": "Hållbar Framtid",
+        "description": "Vi började fokusera mer på en hållbar framtid och förstärkte våra insatser för miljöskydd."
       }
     },
     "contact": {
@@ -149,7 +149,7 @@
     },
     "location": {
       "title": "Vår plats",
-      "subtitle": "Vi är belägna i hjärtat av den finska skärgården."
+      "subtitle": "Vi verkar i hjärtat av Ålands skärgård, i Flisö by i Föglö kommun."
     }
   },
 
