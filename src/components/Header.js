@@ -272,7 +272,7 @@ const Header = () => {
     <HeaderWrapper $isScrolled={isScrolled}>
       <Container>
         <NavBar>
-          <Logo to={`/${currentLang}`}>M.A.T FISH</Logo>
+          <Logo to={`/${currentLang}`}>M.A.T-FISH</Logo>
 
           <DesktopNav>
             {navItems.map((item) => (

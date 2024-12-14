@@ -181,7 +181,7 @@ function Footer() {
   // Get current language from URL
   const getCurrentLanguage = () => {
     const path = location.pathname;
-    const langMatch = path.match(/^\/(en|fi|sv|ja)/);
+    const langMatch = path.match(/^\/(en|fi|sv)/);
     return langMatch ? langMatch[1] : "fi";
   };
 
@@ -190,7 +190,7 @@ function Footer() {
   // Create language path
   const createLanguagePath = (langCode) => {
     const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv|ja)/, "");
+    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv)/, "");
     return `/${langCode}${pathWithoutLang || ""}`;
   };
 
@@ -243,7 +243,7 @@ function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <SocialIcons>
               <SocialIcon
-                href="https://www.linkedin.com/company/m-a-t-fish-ab-oy/"
+                href="https://www.linkedin.com/company/matfish"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -271,7 +271,7 @@ function Footer() {
                 </svg>
               </SocialIcon>
               <SocialIcon
-                href="https://www.instagram.com/matfishoy/"
+                href="https://www.instagram.com/matfishcompany/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -294,9 +294,6 @@ function Footer() {
               </LanguageLink>
               <LanguageLink to="/en" $isActive={currentLang === "en"}>
                 EN
-              </LanguageLink>
-              <LanguageLink to="/ja" $isActive={currentLang === "ja"}>
-                JA
               </LanguageLink>
             </LanguageSelector>
           </div>

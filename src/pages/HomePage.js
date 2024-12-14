@@ -202,7 +202,7 @@ const HomePage = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight"
             variants={itemVariants}
           >
-            M.A.T FISH
+            M.A.T-FISH
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl lg:text-3xl text-white mb-12 font-light"
