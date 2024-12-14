@@ -150,7 +150,9 @@
     },
     "location": {
       "title": "Sijaintimme",
-      "subtitle": "Toimimme Ahvenanmaan saariston sydämessä, Föglön kunnassa Flisön kylässä."
+      "subtitle": "Toimimme Ahvenanmaan saariston sydämessä, Föglön kunnassa Flisön kylässä.",
+      "visiting": "Käyntiosoite",
+      "postal": "Postiosoite"
     }
   },
 

@@ -150,7 +150,9 @@
     },
     "location": {
       "title": "Vår plats",
-      "subtitle": "Vi verkar i hjärtat av Ålands skärgård, i Flisö by i Föglö kommun."
+      "subtitle": "Vi verkar i hjärtat av Ålands skärgård, i Flisö by i Föglö kommun.",
+      "visiting": "Besöksadress",
+      "postal": "Postadress"
     }
   },
 

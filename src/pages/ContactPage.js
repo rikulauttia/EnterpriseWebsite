@@ -295,19 +295,37 @@ const ContactPage = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
-            <ContactCard className="lg:col-span-2">
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    M.A.T-Fish Ab Oy
-                  </h3>
-                  <p className="text-lg text-gray-600">Tingsvägen 3</p>
-                  <p className="text-lg text-gray-600">22710 Föglö</p>
-                  <p className="text-lg text-gray-600">Åland, Finland</p>
+            <div className="lg:col-span-2 space-y-6">
+              {/* Visiting Address */}
+              <ContactCard>
+                <div className="flex items-start gap-4">
+                  <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t("contactpage.location.visiting", "Visiting Address")}
+                    </h3>
+                    <p className="text-lg text-gray-600">Flisövägen 204</p>
+                    <p className="text-lg text-gray-600">22710 Föglö</p>
+                    <p className="text-lg text-gray-600">Åland, Finland</p>
+                  </div>
                 </div>
-              </div>
-            </ContactCard>
+              </ContactCard>
+
+              {/* Postal Address */}
+              <ContactCard>
+                <div className="flex items-start gap-4">
+                  <Mail className="w-6 h-6 text-blue-600 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      {t("contactpage.location.postal", "Postal Address")}
+                    </h3>
+                    <p className="text-lg text-gray-600">Tingsvägen 3</p>
+                    <p className="text-lg text-gray-600">22710 Föglö</p>
+                    <p className="text-lg text-gray-600">Åland, Finland</p>
+                  </div>
+                </div>
+              </ContactCard>
+            </div>
 
             <div className="lg:col-span-3">
               <MapContainer>

@@ -150,7 +150,9 @@
     },
     "location": {
       "title": "Our Location",
-      "subtitle": "We operate in the heart of the Åland Archipelago, in the village of Flisö in the municipality of Föglö."
+      "subtitle": "We operate in the heart of the Åland Archipelago, in the village of Flisö in the municipality of Föglö.",
+      "visiting": "Visiting Address",
+      "postal": "Postal Address"
     }
   },
 
