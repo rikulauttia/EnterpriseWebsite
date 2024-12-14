@@ -6,7 +6,7 @@
   },
 
   "meta": {
-    "title": "M.A.T-Fish | Korkealaatuiset kalatuotteet ja -jalostus",
+    "title": "M.A.T-Fish | Korkealaatuiset kalatuotteet ja -jalostus.",
     "description": "Korkealaatuista kasvatettua kirjolohta, siikaa ja nieriää. Tuoreen kalan toimitus ympäri Suomen. Erikoistunut kalan jalostukseen ja premium kaviaarin tuotantoon."
   },
 
@@ -21,7 +21,8 @@
 
   "home": {
     "hero": {
-      "subtitle": "Kestävää kalankasvatusta Suomen saariston puhtaista vesistä."
+      "subtitle": "Kestävää kalankasvatusta Ahvenanmaan saariston puhtaista vesistä.",
+      "contact": "Ota yhteyttä"
     },
     "features": {
       "quality": {
