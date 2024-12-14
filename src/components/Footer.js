@@ -227,6 +227,13 @@ function Footer() {
               </a>
             </FooterText>
             <FooterText>
+              Anu Lauttia:{" "}
+              <a href="tel:0408644982" className="hover:text-[#4d9fff]">
+                040 8644 982
+              </a>
+            </FooterText>
+            <FooterText>
+              Kerli Vokksepp:{" "}
               <a href="tel:0401454014" className="hover:text-[#4d9fff]">
                 040 1454 014
               </a>
