@@ -187,13 +187,6 @@ function Footer() {
 
   const currentLang = getCurrentLanguage();
 
-  // Create language path
-  const createLanguagePath = (langCode) => {
-    const currentPath = location.pathname;
-    const pathWithoutLang = currentPath.replace(/^\/(en|fi|sv)/, "");
-    return `/${langCode}${pathWithoutLang || ""}`;
-  };
-
   return (
     <FooterWrapper>
       <FooterContent>
