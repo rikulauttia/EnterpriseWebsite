@@ -5,6 +5,11 @@
     "direction": "ltr"
   },
 
+  "meta": {
+    "title": "M.A.T-Fish | Korkealaatuiset kalatuotteet ja -jalostus",
+    "description": "Korkealaatuista kasvatettua kirjolohta, siikaa ja nieriää. Tuoreen kalan toimitus ympäri Suomen. Erikoistunut kalan jalostukseen ja premium kaviaarin tuotantoon."
+  },
+
   "navigation": {
     "home": "Etusivu",
     "products": "Tuotteet",

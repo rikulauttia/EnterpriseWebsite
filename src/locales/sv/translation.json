@@ -5,6 +5,11 @@
     "direction": "ltr"
   },
 
+  "meta": {
+    "title": "M.A.T-Fish | Premium fiskprodukter och förädling",
+    "description": "Premium kvalitet odlad regnbågslax, sik och röding. Färsk fiskleverans över hela Finland. Specialiserad på fiskförädling och premium kaviarproduktion."
+  },
+
   "navigation": {
     "home": "Hem",
     "products": "Produkter",
