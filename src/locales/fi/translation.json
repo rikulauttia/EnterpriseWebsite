@@ -145,7 +145,8 @@
     "subtitle": "Ota yhteyttä asiantuntijatiimiimme keskustellaksesi kalatarpeistasi.",
     "roles": {
       "ceo": "Toimitusjohtaja",
-      "sales": "Myyntiedustaja"
+      "sales": "Myyntiedustaja",
+      "chairman": "Hallituksen puheenjohtaja"
     },
     "location": {
       "title": "Sijaintimme",

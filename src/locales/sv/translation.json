@@ -145,7 +145,8 @@
     "subtitle": "Kontakta vårt expertteam för att diskutera dina fiskbehov.",
     "roles": {
       "ceo": "Verkställande direktör",
-      "sales": "Försäljningsrepresentant"
+      "sales": "Försäljningsrepresentant",
+      "chairman": "Styrelseordförande"
     },
     "location": {
       "title": "Vår plats",

@@ -38,6 +38,9 @@ const ContactCard = styled(motion.div)`
   overflow: hidden;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(229, 231, 235, 0.7);
+  height: 100%; // Add this
+  display: flex; // Add this
+  flex-direction: column; // Add this
 
   &::before {
     content: "";
@@ -127,7 +130,6 @@ const ContactPage = () => {
       title: t("contactpage.roles.ceo", "Chief Executive Officer"),
       contacts: {
         mobile: "040 8644 982",
-        phone: "018-511 00",
         email: "anu.lauttia@matfish.fi",
       },
     },
@@ -139,6 +141,10 @@ const ContactPage = () => {
         phone: "018-511 01",
         email: "info@matfish.fi",
       },
+    },
+    {
+      name: "Marcus Eriksson",
+      title: t("contactpage.roles.chairman", "Chairman of the Board"),
     },
   ];
 
@@ -196,7 +202,8 @@ const ContactPage = () => {
       {/* Team Section */}
       <Section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          {/* Update this grid div to center the cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {contactPersons.map((person, index) => (
               <ContactCard
                 key={index}
@@ -204,28 +211,55 @@ const ContactPage = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
+                className="h-full"
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                  {person.name}
-                </h3>
-                <p className="text-lg text-gray-600 mb-8">{person.title}</p>
-                <div className="space-y-3">
-                  <ContactLink
-                    href={`tel:${person.contacts.mobile.replace(/\s/g, "")}`}
-                  >
-                    <Phone className="w-5 h-5 text-blue-600" />
-                    <span className="text-lg">{person.contacts.mobile}</span>
-                  </ContactLink>
-                  <ContactLink
-                    href={`tel:${person.contacts.phone.replace(/\s/g, "")}`}
-                  >
-                    <Phone className="w-5 h-5 text-blue-600" />
-                    <span className="text-lg">{person.contacts.phone}</span>
-                  </ContactLink>
-                  <ContactLink href={`mailto:${person.contacts.email}`}>
-                    <Mail className="w-5 h-5 text-blue-600" />
-                    <span className="text-lg">{person.contacts.email}</span>
-                  </ContactLink>
+                <div className="flex flex-col h-full">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                    {person.name}
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-4">
+                    {/* Reduced from mb-8 to mb-4 */}
+                    {person.title}
+                  </p>
+                  {person.contacts && (
+                    <div className="space-y-3">
+                      {/* Removed mt-auto */}
+                      {person.contacts.mobile && (
+                        <ContactLink
+                          href={`tel:${person.contacts.mobile.replace(
+                            /\s/g,
+                            ""
+                          )}`}
+                        >
+                          <Phone className="w-5 h-5 text-blue-600" />
+                          <span className="text-lg">
+                            {person.contacts.mobile}
+                          </span>
+                        </ContactLink>
+                      )}
+                      {person.contacts.email && (
+                        <ContactLink href={`mailto:${person.contacts.email}`}>
+                          <Mail className="w-5 h-5 text-blue-600" />
+                          <span className="text-lg">
+                            {person.contacts.email}
+                          </span>
+                        </ContactLink>
+                      )}
+                      {person.contacts.phone && (
+                        <ContactLink
+                          href={`tel:${person.contacts.phone.replace(
+                            /\s/g,
+                            ""
+                          )}`}
+                        >
+                          <Phone className="w-5 h-5 text-blue-600" />
+                          <span className="text-lg">
+                            {person.contacts.phone}
+                          </span>
+                        </ContactLink>
+                      )}
+                    </div>
+                  )}
                 </div>
               </ContactCard>
             ))}
