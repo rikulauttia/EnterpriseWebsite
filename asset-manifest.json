@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/EnterpriseWebsite/static/css/main.fa7ce962.css",
+    "main.js": "/EnterpriseWebsite/static/js/main.1cffd9b7.js",
+    "static/media/hero-background.jpg": "/EnterpriseWebsite/static/media/hero-background.57484303d7a0a8231d93.jpg",
+    "index.html": "/EnterpriseWebsite/index.html",
+    "main.fa7ce962.css.map": "/EnterpriseWebsite/static/css/main.fa7ce962.css.map",
+    "main.1cffd9b7.js.map": "/EnterpriseWebsite/static/js/main.1cffd9b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa7ce962.css",
+    "static/js/main.1cffd9b7.js"
+  ]
+}
